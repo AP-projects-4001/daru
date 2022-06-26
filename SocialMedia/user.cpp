@@ -7,10 +7,10 @@ User::User()
     phoneNumber = "";
     email = "";
     ID = "";
-    birthDate = Date();
+    birthDate = "";
 }
 
-User::User(QString userName, QString password, QString phoneNumber, QString email, QString ID, Date birthDate)
+User::User(QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate)
 {
     setUserName(userName);
     setPassword(password);
@@ -44,7 +44,7 @@ QString User::getID() const
     return ID;
 }
 
-Date User::getBirthDate()
+QString User::getBirthDate()
 {
     return birthDate;
 }
@@ -109,7 +109,7 @@ void User::setID(QString ID)
     this->ID = ID;
 }
 
-void User::setBirthDate(Date birthDate)
+void User::setBirthDate(QString birthDate)
 {
     this->birthDate = birthDate;
 }
