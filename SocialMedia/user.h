@@ -13,22 +13,22 @@ class User
     QString email;
     // id parameter for texting people without their number
     QString ID;
-    Date birthDate;
+    QString birthDate;
 public:
     User();
-    User(QString userName, QString password, QString phoneNumber, QString email, QString ID, Date birthDate);
+    User(QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate);
     QString getUserName() const;
     QString getPassword() const;
     QString getPhoneNumber() const;
     QString getEmail() const;
     QString getID() const;
-    Date getBirthDate();
+    QString getBirthDate();
     void setUserName(QString userName);
     void setPassword(QString password);
     void setPhoneNumber(QString phoneNumber);
     void setEmail(QString email);
     void setID(QString ID);
-    void setBirthDate(Date birthDate);
+    void setBirthDate(QString birthDate);
 
 };
 

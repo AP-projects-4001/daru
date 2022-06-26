@@ -12,15 +12,18 @@ SOURCES += \
     date.cpp \
     main.cpp \
     mainwindow.cpp \
+    register.cpp \
     user.cpp
 
 HEADERS += \
     date.h \
     mainwindow.h \
+    register.h \
     user.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    register.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
