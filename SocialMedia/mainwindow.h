@@ -17,7 +17,7 @@ public:
 
 private slots:
     void on_Register_Button_clicked();
-
+    void on_Login_Button_clicked();
 private:
     Ui::MainWindow *ui;
 };
