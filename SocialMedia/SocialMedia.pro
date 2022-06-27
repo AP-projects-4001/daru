@@ -12,6 +12,7 @@ SOURCES += \
     chat.cpp \
     darugram.cpp \
     date.cpp \
+    group.cpp \
     forget_pass.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     chat.h \
     darugram.h \
     date.h \
+    group.h \
     forget_pass.h \
     mainwindow.h \
     message.h \
