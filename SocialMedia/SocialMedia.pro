@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     chat.cpp \
     date.cpp \
+    group.cpp \
     main.cpp \
     mainwindow.cpp \
     message.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     chat.h \
     date.h \
+    group.h \
     mainwindow.h \
     message.h \
     register.h \
