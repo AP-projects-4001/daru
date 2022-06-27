@@ -10,6 +10,8 @@
 #include<QJsonObject>
 #include<QFile>
 #include<QMessageBox>
+#include"forget_pass.h"
+#include"chatpage.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,6 +37,7 @@ void MainWindow::on_Login_Button_clicked()
 {
     QJsonObject Test_User;
     QJsonObject All_User;
+
     QFile F_R_Users("All_User.json");
     if(F_R_Users.open(QIODevice::ReadOnly))
     {
@@ -48,7 +51,15 @@ void MainWindow::on_Login_Button_clicked()
             Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
             if(Test_User["Username"]==ui->User_Line->text()&&Test_User["Password"]==ui->Line_Pass->text())
             {
-
+                CurrentUser->setPassword(Test_User["Password"].toString());
+                CurrentUser->setUserName(Test_User["Username"].toString());
+                CurrentUser->setBirthDate(Test_User["Birthday"].toString());
+                CurrentUser->setEmail(Test_User["Email"].toString());
+                CurrentUser->setID(Test_User["ID"].toString());
+                CurrentUser->setPhoneNumber(Test_User["Phone"].toString());
+                ChatPage* Chat = new ChatPage();
+                Chat->show();
+                emit Person_Add(CurrentUser);
             }
 
         }
@@ -58,5 +69,12 @@ void MainWindow::on_Login_Button_clicked()
         QMessageBox::information(this,"Reason for Not working","cannot open the file");
     }
 
+}
+
+
+void MainWindow::on_Forgot_Button_clicked()
+{
+    forget_pass *f = new forget_pass();
+    f->show();
 }
 

@@ -1,82 +1,10 @@
 {
-    "AlAK": {
-        "Birthday": "009988",
-        "Email": "AlAK9dol",
-        "ID": "AlAK",
-        "Password": "AlAK9dol",
-        "Phone": "0990999988",
-        "Username": "AlAk"
-    },
-    "Alidombe": {
-        "Birthday": "009988",
-        "Email": "Nii88mm",
-        "ID": "Alidombe",
-        "Password": "Nii88mm",
-        "Phone": "1122334455",
-        "Username": "NimaLion"
-    },
-    "Imanbbai": {
-        "Birthday": "999999",
-        "Email": "ImanKHige1",
-        "ID": "Imanbbai",
-        "Password": "ImanKHige1",
-        "Phone": "0990009988",
-        "Username": "imanfery"
-    },
-    "MAMADmechanic": {
-        "Birthday": "0099898",
-        "Email": "MAMADIAnn9",
-        "ID": "MAMADmechanic",
-        "Password": "MAMADIAnn9",
-        "Phone": "0987654321",
-        "Username": "Mamad"
-    },
-    "MaryamH": {
-        "Birthday": "009988",
-        "Email": "Nima5977",
-        "ID": "MaryamH",
-        "Password": "Nima5977",
-        "Phone": "0990987597",
-        "Username": "maryamH"
-    },
-    "Naier_H": {
-        "Birthday": "009988",
-        "Email": "Nima5977",
-        "ID": "Naier_H",
-        "Password": "Nima5977",
-        "Phone": "0990987597",
-        "Username": "Naier"
-    },
-    "Nimazm32": {
-        "Birthday": "090809",
-        "Email": "123NNzz",
-        "ID": "Nimazm32",
-        "Password": "123NNzz",
-        "Phone": "0990112233",
-        "Username": "Nima"
-    },
     "Nimazm33": {
-        "Birthday": "009988",
+        "Birthday": "090807",
         "Email": "Nima5977",
         "ID": "Nimazm33",
         "Password": "Nima5977",
-        "Phone": "0905667808",
+        "Phone": "9056678081",
         "Username": "LioNima"
-    },
-    "ZZ": {
-        "Birthday": "080901",
-        "Email": "AliSSSSS23",
-        "ID": "ZZ",
-        "Password": "AliSSSSS23",
-        "Phone": "0990999121",
-        "Username": "ALishefte"
-    },
-    "aligambo": {
-        "Birthday": "998877",
-        "Email": "Aliibb99",
-        "ID": "aligambo",
-        "Password": "Aliibb99",
-        "Phone": "0099887766",
-        "Username": "AliPashmalo"
     }
 }

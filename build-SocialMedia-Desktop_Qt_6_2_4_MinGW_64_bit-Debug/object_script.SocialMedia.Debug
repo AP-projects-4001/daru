@@ -1,0 +1,14 @@
+debug/chatpage.o
+debug/chat.o
+debug/date.o
+debug/group.o
+debug/forget_pass.o
+debug/main.o
+debug/mainwindow.o
+debug/message.o
+debug/register.o
+debug/user.o
+debug/moc_chatpage.o
+debug/moc_forget_pass.o
+debug/moc_mainwindow.o
+debug/moc_register.o

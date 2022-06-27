@@ -22,42 +22,26 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const uint offsetsAndSize[2];
-    char stringdata0[11];
-=======
-    const uint offsetsAndSize[6];
-    char stringdata0[39];
->>>>>>> loggin
-=======
-    const uint offsetsAndSize[8];
-    char stringdata0[63];
->>>>>>> loggin
+    const uint offsetsAndSize[14];
+    char stringdata0[105];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
-<<<<<<< HEAD
-QT_MOC_LITERAL(0, 10) // "MainWindow"
-
-    },
-    "MainWindow"
-=======
 QT_MOC_LITERAL(0, 10), // "MainWindow"
-QT_MOC_LITERAL(11, 26), // "on_Register_Button_clicked"
-QT_MOC_LITERAL(38, 0), // ""
-QT_MOC_LITERAL(39, 23) // "on_Login_Button_clicked"
+QT_MOC_LITERAL(11, 10), // "Person_Add"
+QT_MOC_LITERAL(22, 0), // ""
+QT_MOC_LITERAL(23, 5), // "User*"
+QT_MOC_LITERAL(29, 26), // "on_Register_Button_clicked"
+QT_MOC_LITERAL(56, 23), // "on_Login_Button_clicked"
+QT_MOC_LITERAL(80, 24) // "on_Forgot_Button_clicked"
 
     },
-    "MainWindow\0on_Register_Button_clicked\0"
-<<<<<<< HEAD
-    ""
->>>>>>> loggin
-=======
-    "\0on_Login_Button_clicked"
->>>>>>> loggin
+    "MainWindow\0Person_Add\0\0User*\0"
+    "on_Register_Button_clicked\0"
+    "on_Login_Button_clicked\0"
+    "on_Forgot_Button_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,53 +51,54 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-<<<<<<< HEAD
-<<<<<<< HEAD
-       0,    0, // methods
-=======
-       1,   14, // methods
->>>>>>> loggin
-=======
-       2,   14, // methods
->>>>>>> loggin
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
 
-<<<<<<< HEAD
-=======
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   38,    2, 0x06,    1 /* Public */,
+
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x08,    1 /* Private */,
-       3,    0,   27,    2, 0x08,    2 /* Private */,
+       4,    0,   41,    2, 0x08,    3 /* Private */,
+       5,    0,   42,    2, 0x08,    4 /* Private */,
+       6,    0,   43,    2, 0x08,    5 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void, 0x80000000 | 3,    2,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
->>>>>>> loggin
        0        // eod
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-<<<<<<< HEAD
-    (void)_o;
-    (void)_id;
-    (void)_c;
-=======
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_Register_Button_clicked(); break;
-        case 1: _t->on_Login_Button_clicked(); break;
+        case 0: _t->Person_Add((*reinterpret_cast< std::add_pointer_t<User*>>(_a[1]))); break;
+        case 1: _t->on_Register_Button_clicked(); break;
+        case 2: _t->on_Login_Button_clicked(); break;
+        case 3: _t->on_Forgot_Button_clicked(); break;
         default: ;
         }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (MainWindow::*)(User * );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainWindow::Person_Add)) {
+                *result = 0;
+                return;
+            }
+        }
     }
->>>>>>> loggin
-    (void)_a;
 }
 
 const QMetaObject MainWindow::staticMetaObject = { {
@@ -123,16 +108,8 @@ const QMetaObject MainWindow::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
-, QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-, QtPrivate::TypeAndForceComplete<void, std::false_type>
->>>>>>> loggin
-=======
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
->>>>>>> loggin
+, QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<User *, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -156,21 +133,25 @@ void *MainWindow::qt_metacast(const char *_clname)
 int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
-<<<<<<< HEAD
-=======
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
->>>>>>> loggin
     return _id;
+}
+
+// SIGNAL 0
+void MainWindow::Person_Add(User * _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
