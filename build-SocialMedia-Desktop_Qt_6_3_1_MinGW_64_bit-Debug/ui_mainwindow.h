@@ -32,8 +32,8 @@ public:
     QLabel *Pass_label;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *User_Line;
+    QLineEdit *Line_Pass;
     QPushButton *Forgot_Button;
     QPushButton *Login_Button;
     QPushButton *Register_Button;
@@ -74,15 +74,15 @@ public:
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        lineEdit = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        User_Line = new QLineEdit(verticalLayoutWidget_2);
+        User_Line->setObjectName(QString::fromUtf8("User_Line"));
 
-        verticalLayout_2->addWidget(lineEdit);
+        verticalLayout_2->addWidget(User_Line);
 
-        lineEdit_2 = new QLineEdit(verticalLayoutWidget_2);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        Line_Pass = new QLineEdit(verticalLayoutWidget_2);
+        Line_Pass->setObjectName(QString::fromUtf8("Line_Pass"));
 
-        verticalLayout_2->addWidget(lineEdit_2);
+        verticalLayout_2->addWidget(Line_Pass);
 
         Forgot_Button = new QPushButton(centralwidget);
         Forgot_Button->setObjectName(QString::fromUtf8("Forgot_Button"));
