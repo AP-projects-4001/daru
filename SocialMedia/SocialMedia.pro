@@ -9,15 +9,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chat.cpp \
     date.cpp \
     main.cpp \
     mainwindow.cpp \
+    message.cpp \
     register.cpp \
     user.cpp
 
 HEADERS += \
+    chat.h \
     date.h \
     mainwindow.h \
+    message.h \
     register.h \
     user.h
 
