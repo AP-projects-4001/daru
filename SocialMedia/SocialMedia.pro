@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     chat.cpp \
+    darugram.cpp \
     date.cpp \
     forget_pass.cpp \
     main.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     chat.h \
+    darugram.h \
     date.h \
     forget_pass.h \
     mainwindow.h \
@@ -28,6 +30,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    darugram.ui \
     forget_pass.ui \
     mainwindow.ui \
     register.ui

@@ -11,8 +11,6 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-signals:
-    void Person_Add(User*);
 
 public:
     MainWindow(QWidget *parent = nullptr);
