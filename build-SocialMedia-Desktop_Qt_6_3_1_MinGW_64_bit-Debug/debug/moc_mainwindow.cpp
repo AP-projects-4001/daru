@@ -22,29 +22,13 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const uint offsetsAndSize[2];
-    char stringdata0[11];
-=======
-    const uint offsetsAndSize[6];
-    char stringdata0[39];
->>>>>>> loggin
-=======
     const uint offsetsAndSize[8];
     char stringdata0[63];
->>>>>>> loggin
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
-<<<<<<< HEAD
-QT_MOC_LITERAL(0, 10) // "MainWindow"
-
-    },
-    "MainWindow"
-=======
 QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 26), // "on_Register_Button_clicked"
 QT_MOC_LITERAL(38, 0), // ""
@@ -52,12 +36,7 @@ QT_MOC_LITERAL(39, 23) // "on_Login_Button_clicked"
 
     },
     "MainWindow\0on_Register_Button_clicked\0"
-<<<<<<< HEAD
-    ""
->>>>>>> loggin
-=======
     "\0on_Login_Button_clicked"
->>>>>>> loggin
 };
 #undef QT_MOC_LITERAL
 
@@ -67,23 +46,13 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-<<<<<<< HEAD
-<<<<<<< HEAD
-       0,    0, // methods
-=======
-       1,   14, // methods
->>>>>>> loggin
-=======
        2,   14, // methods
->>>>>>> loggin
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
-<<<<<<< HEAD
-=======
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   26,    2, 0x08,    1 /* Private */,
        3,    0,   27,    2, 0x08,    2 /* Private */,
@@ -92,17 +61,11 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
 
->>>>>>> loggin
        0        // eod
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-<<<<<<< HEAD
-    (void)_o;
-    (void)_id;
-    (void)_c;
-=======
     if (_c == QMetaObject::InvokeMetaMethod) {
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
@@ -112,7 +75,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         default: ;
         }
     }
->>>>>>> loggin
     (void)_a;
 }
 
@@ -124,15 +86,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-, QtPrivate::TypeAndForceComplete<void, std::false_type>
->>>>>>> loggin
-=======
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
->>>>>>> loggin
 
 
 >,
@@ -156,8 +110,6 @@ void *MainWindow::qt_metacast(const char *_clname)
 int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
-<<<<<<< HEAD
-=======
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -169,7 +121,6 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
         _id -= 2;
     }
->>>>>>> loggin
     return _id;
 }
 QT_WARNING_POP

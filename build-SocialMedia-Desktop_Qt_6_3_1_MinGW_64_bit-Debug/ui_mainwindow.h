@@ -11,11 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-<<<<<<< HEAD
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QStatusBar>
-=======
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -23,7 +18,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
->>>>>>> loggin
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,8 +26,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-<<<<<<< HEAD
-=======
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *user_label;
@@ -45,7 +37,6 @@ public:
     QPushButton *Forgot_Button;
     QPushButton *Login_Button;
     QPushButton *Register_Button;
->>>>>>> loggin
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,14 +44,6 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-<<<<<<< HEAD
-        MainWindow->resize(800, 600);
-        centralwidget = new QWidget(MainWindow);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-=======
         MainWindow->resize(800, 331);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -114,7 +97,6 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 22));
->>>>>>> loggin
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -128,14 +110,11 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-<<<<<<< HEAD
-=======
         user_label->setText(QCoreApplication::translate("MainWindow", "username:", nullptr));
         Pass_label->setText(QCoreApplication::translate("MainWindow", "Password:", nullptr));
         Forgot_Button->setText(QCoreApplication::translate("MainWindow", "Forget Password", nullptr));
         Login_Button->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         Register_Button->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
->>>>>>> loggin
     } // retranslateUi
 
 };
