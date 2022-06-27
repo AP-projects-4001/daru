@@ -1,8 +1,10 @@
 release/chatpage.o
+release/chat.o
 release/date.o
 release/forget_pass.o
 release/main.o
 release/mainwindow.o
+release/message.o
 release/register.o
 release/user.o
 release/moc_chatpage.o
