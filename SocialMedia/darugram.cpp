@@ -128,7 +128,6 @@ void Darugram::on_Start_chat_btn_clicked()
             x.setText("Files Not Opening");
             x.exec();
         }
-
     }
     delete Cantact;
 }

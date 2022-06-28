@@ -15,7 +15,7 @@ Pv::Pv(QVector<Message> messages, QVector<User> members, QWidget *parent) :
     this->setMessages(messages);
     this->setMembers(members);
     ui->setupUi(this);
-    ui->label->setText(members[0].getUserName());
+    ui->label->setText(members[1].getUserName());
 }
 
 Pv::~Pv()
