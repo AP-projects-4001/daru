@@ -1,7 +1,5 @@
 release/chatpage.o
-release/chat.o
 release/date.o
-release/group.o
 release/forget_pass.o
 release/main.o
 release/mainwindow.o

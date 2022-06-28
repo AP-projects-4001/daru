@@ -9,10 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    chatpage.cpp \
     chat.cpp \
+    chatpage.cpp \
     date.cpp \
-    group.cpp \
     forget_pass.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -21,10 +20,9 @@ SOURCES += \
     user.cpp
 
 HEADERS += \
-    chatpage.h \
     chat.h \
+    chatpage.h \
     date.h \
-    group.h \
     forget_pass.h \
     mainwindow.h \
     message.h \
@@ -32,6 +30,7 @@ HEADERS += \
     user.h
 
 FORMS += \
+    chat.ui \
     chatpage.ui \
     forget_pass.ui \
     mainwindow.ui \

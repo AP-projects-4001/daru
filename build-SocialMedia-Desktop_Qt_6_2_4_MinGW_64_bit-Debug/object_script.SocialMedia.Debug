@@ -1,7 +1,5 @@
 debug/chatpage.o
-debug/chat.o
 debug/date.o
-debug/group.o
 debug/forget_pass.o
 debug/main.o
 debug/mainwindow.o
