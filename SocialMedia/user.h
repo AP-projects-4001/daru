@@ -16,9 +16,10 @@ class User
     QString ID;
     QString birthDate;
     QVector<QString> chatNames;
+    QVector<User> contacts;
 public:
     User();
-    User(QVector<QString> chatNames, QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate);
+    User(QVector<User> contacts, QVector<QString> chatNames, QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate);
 
     QString getUserName() const;
     QString getPassword() const;
@@ -27,6 +28,7 @@ public:
     QString getID() const;
     QString getBirthDate();
     QVector<QString> getChatNames() const;
+    QVector<User> getContacts() const;
 
     void setUserName(QString userName);
     void setPassword(QString password);
@@ -35,6 +37,7 @@ public:
     void setID(QString ID);
     void setBirthDate(QString birthDate);
     void setChatNames(QVector<QString> chatNames);
+    void setContacts(QVector<User> contacts);
 
 };
 

@@ -10,8 +10,9 @@ User::User()
     birthDate = "";
 }
 
-User::User(QVector<QString> chatNames, QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate)
+User::User(QVector<User> contacts, QVector<QString> chatNames, QString userName, QString password, QString phoneNumber, QString email, QString ID, QString birthDate)
 {
+    setContacts(contacts);
     setChatNames(chatNames);
     setUserName(userName);
     setPassword(password);
@@ -19,6 +20,11 @@ User::User(QVector<QString> chatNames, QString userName, QString password, QStri
     setEmail(email);
     setID(ID);
     setBirthDate(birthDate);
+}
+
+QVector<User> User::getContacts() const
+{
+    return contacts;
 }
 
 QString User::getUserName() const
@@ -53,6 +59,11 @@ QString User::getBirthDate()
 QVector<QString> User::getChatNames() const
 {
     return chatNames;
+}
+
+void User::setContacts(QVector<User> contacts)
+{
+    this->contacts = contacts;
 }
 
 void User::setUserName(QString userName)
