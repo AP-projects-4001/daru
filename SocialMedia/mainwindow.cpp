@@ -11,7 +11,8 @@
 #include<QFile>
 #include<QMessageBox>
 #include"forget_pass.h"
-#include"chatpage.h"
+#include"darugram.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -57,9 +58,12 @@ void MainWindow::on_Login_Button_clicked()
                 CurrentUser->setEmail(Test_User["Email"].toString());
                 CurrentUser->setID(Test_User["ID"].toString());
                 CurrentUser->setPhoneNumber(Test_User["Phone"].toString());
-                ChatPage* Chat = new ChatPage();
-                Chat->show();
-                emit Person_Add(CurrentUser);
+                Darugram* D=new Darugram(this,CurrentUser);
+                D->show();
+
+            }
+            else {
+                QMessageBox::warning(this,"Reason for Not working","Username or Password wrong");
             }
 
         }
