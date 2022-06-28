@@ -38,7 +38,7 @@ void MainWindow::on_Login_Button_clicked()
 {
     QJsonObject Test_User;
     QJsonObject All_User;
-
+    int state = 0;
     QFile F_R_Users("All_User.json");
     if(F_R_Users.open(QIODevice::ReadOnly))
     {
@@ -58,15 +58,15 @@ void MainWindow::on_Login_Button_clicked()
                 CurrentUser->setEmail(Test_User["Email"].toString());
                 CurrentUser->setID(Test_User["ID"].toString());
                 CurrentUser->setPhoneNumber(Test_User["Phone"].toString());
+                state = 1;
                 Darugram* D=new Darugram(this,CurrentUser);
                 D->show();
+                break;
 
             }
-            else {
-                QMessageBox::warning(this,"Reason for Not working","Username or Password wrong");
-            }
-
         }
+        if(state==0)
+            QMessageBox::warning(this,"Reason for Not working","Wrong Username or Password");
     }
     else
     {

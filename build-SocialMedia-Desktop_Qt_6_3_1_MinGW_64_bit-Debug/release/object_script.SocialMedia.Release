@@ -1,4 +1,4 @@
-release/chat.o
+release/darugram.o
 release/date.o
 release/forget_pass.o
 release/main.o
@@ -6,6 +6,7 @@ release/mainwindow.o
 release/message.o
 release/register.o
 release/user.o
+release/moc_darugram.o
 release/moc_forget_pass.o
 release/moc_mainwindow.o
 release/moc_register.o

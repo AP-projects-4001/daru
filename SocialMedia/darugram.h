@@ -26,6 +26,9 @@ public:
     Darugram(QWidget *parent = nullptr,User *Current_User = new User());
     ~Darugram();
 
+private slots:
+    void on_Search_btn_clicked();
+
 private:
     Ui::Darugram *ui;
     User *Current_User;
