@@ -8,10 +8,11 @@ Channel::Channel(QWidget *parent) :
     ui->setupUi(this);
 }
 
-Channel::Channel(QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent) :
+Channel::Channel(QString channelName, QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Channel)
 {
+    setChannelName(channelName);
     setMessages(messages);
     setMembers(members);
     setCreator(creator);
@@ -27,6 +28,16 @@ QVector<User> Channel::getAdmins() const
 User Channel::getCreator() const
 {
     return creator;
+}
+
+QString Channel::getChannelName() const
+{
+    return channelName;
+}
+
+void Channel::setChannelName(QString channelName)
+{
+    this->channelName = channelName;
 }
 
 void Channel::setAdmins(QVector<User> admins)

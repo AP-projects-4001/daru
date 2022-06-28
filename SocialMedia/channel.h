@@ -14,10 +14,12 @@ class Channel : public QMainWindow, public Chat
 //channel class to impliment chennels in social media
 public:
     explicit Channel(QWidget *parent = nullptr);
-    explicit Channel(QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent = nullptr);
+    explicit Channel(QString channelName, QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent = nullptr);
 
     QVector<User> getAdmins() const;
     User getCreator() const;
+    QString getChannelName() const;
+    void setChannelName(QString channelName);
     void setAdmins(QVector<User> admins);
     void addAdmin(User admin);
     void setCreator(User creator);
@@ -31,6 +33,7 @@ private:
     User creator;
     QVector<User> admins;
     Ui::Channel *ui;
+    QString channelName;
 };
 
 #endif // CHANNEL_H
