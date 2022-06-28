@@ -17,6 +17,9 @@ public:
     explicit Pv(QVector<Message> messages, QVector<User> members, QWidget *parent = nullptr);
     ~Pv();
 
+private slots:
+    void on_Send_btn_clicked();
+
 private:
     Ui::Pv *ui;
 };
