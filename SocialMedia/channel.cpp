@@ -49,6 +49,16 @@ void Channel::addMember(User member)
     getMembers().push_front(member);
 }
 
+bool Channel::checkAdmin(QString checkID)
+{
+    for (int i = 0; i < this->admins.length(); i++){
+        if (admins[i].getID() == checkID){
+            return true;
+        }
+    }
+    return false;
+}
+
 Channel::~Channel()
 {
     delete ui;
