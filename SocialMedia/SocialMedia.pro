@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     message.cpp \
+    pv.cpp \
     register.cpp \
     user.cpp
 
@@ -26,6 +27,7 @@ HEADERS += \
     forget_pass.h \
     mainwindow.h \
     message.h \
+    pv.h \
     register.h \
     user.h
 
@@ -33,6 +35,7 @@ FORMS += \
     darugram.ui \
     forget_pass.ui \
     mainwindow.ui \
+    pv.ui \
     register.ui
 
 # Default rules for deployment.
