@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chat.cpp \
     darugram.cpp \
     date.cpp \
     forget_pass.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
     user.cpp
 
 HEADERS += \
+    chat.h \
     darugram.h \
     date.h \
     forget_pass.h \
