@@ -38,6 +38,7 @@ void MainWindow::on_Login_Button_clicked()
 {
     QJsonObject Test_User;
     QJsonObject All_User;
+    QJsonObject Cntacts;
     int state = 0;
     QFile F_R_Users("All_User.json");
     if(F_R_Users.open(QIODevice::ReadOnly))
@@ -46,6 +47,7 @@ void MainWindow::on_Login_Button_clicked()
         QJsonDocument b = QJsonDocument::fromJson(a);
         All_User = b.object();
         F_R_Users.close();
+        User *Cantact = new User();
         QList Users_Keys = All_User.keys();
         for(int i = 0;i<Users_Keys.size();i++)
         {
@@ -58,9 +60,31 @@ void MainWindow::on_Login_Button_clicked()
                 CurrentUser->setEmail(Test_User["Email"].toString());
                 CurrentUser->setID(Test_User["ID"].toString());
                 CurrentUser->setPhoneNumber(Test_User["Phone"].toString());
+                QJsonArray a,b;
+                a = Test_User["Contacts"].toArray();
+                for(int j =0;j<a.size();j++)
+                {
+                    Cntacts = All_User.find(a[i].toString())->toObject();
+                    if(Cntacts!=All_User.end()->toObject())
+                    {
+                        Cantact->setUserName(Cntacts["Username"].toString());
+                        Cantact->setBirthDate(Cntacts["Birthday"].toString());
+                        Cantact->setEmail(Cntacts["Email"].toString());
+                        Cantact->setID(Cntacts["ID"].toString());
+                        Cantact->setPhoneNumber(Cntacts["Phone"].toString());
+                        CurrentUser->getContacts().push_front(*Cantact);
+                    }
+                }
+                b= Test_User["Chats"].toArray();
+                for(int j = 0;j<b.size();j++)
+                {
+                    CurrentUser->getChatNames().push_front(b[j].toString());
+                }
+
                 state = 1;
                 Darugram* D=new Darugram(this,CurrentUser);
                 D->show();
+                delete Cantact;
                 break;
 
             }

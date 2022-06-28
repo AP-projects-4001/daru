@@ -29,6 +29,8 @@ public:
 private slots:
     void on_Search_btn_clicked();
 
+    void on_Start_chat_btn_clicked();
+
 private:
     Ui::Darugram *ui;
     User *Current_User;

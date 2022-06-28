@@ -62,6 +62,9 @@ void Register::on_Register_Button_clicked()
             Current_User["Phone"] = Reg_user->getPhoneNumber();
             Current_User["Password"] = Reg_user->getPassword();
             Current_User["Email"] = Reg_user->getEmail();
+            QJsonArray a,b;
+            Current_User["Contacts"]=a;
+            Current_User["Chats"]=b;
             All_User[Reg_user->getID()]=Current_User;
             QJsonDocument All_User_File(All_User);
             QFile F_W_Users("All_User.json");

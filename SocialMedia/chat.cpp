@@ -1,27 +1,37 @@
 #include "chat.h"
 
-chat::chat(QVector<Message> messages, QVector<User> members)
+Chat::Chat()
+{
+    ;
+}
+
+Chat::Chat(QVector<Message> messages, QVector<User> members)
 {
     setMessages(messages);
     setMembers(members);
 }
 
-QVector<Message> chat::getMessages() const
+QVector<Message> Chat::getMessages() const
 {
     return messages;
 }
 
-QVector<User> chat::getMembers() const
+QVector<User> Chat::getMembers() const
 {
     return members;
 }
 
-void chat::setMembers(QVector<User> members)
+void Chat::setMembers(QVector<User> members)
 {
     this->members = members;
 }
 
-void chat::setMessages(QVector<Message> messages)
+void Chat::setMessages(QVector<Message> messages)
 {
     this->messages = messages;
+}
+
+void Chat::addMessage(Message msg)
+{
+    this->messages.push_front(msg);
 }
