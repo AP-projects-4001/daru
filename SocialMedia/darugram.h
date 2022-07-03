@@ -27,14 +27,13 @@ class Darugram : public QMainWindow
 public:
     explicit Darugram(QWidget *parent = nullptr);
     Darugram(QWidget *parent = nullptr,User *Current_User = new User());
+    void on_Chat_btn_clicked(QString b);
     ~Darugram();
 
 private slots:
     void on_Search_btn_clicked();
 
     void on_Start_chat_btn_clicked();
-
-    void on_Chat_btn_clicked(QString b);
 
 private:
     Ui::Darugram *ui;

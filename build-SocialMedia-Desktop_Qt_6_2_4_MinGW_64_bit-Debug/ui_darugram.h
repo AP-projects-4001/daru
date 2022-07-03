@@ -40,7 +40,7 @@ public:
     {
         if (Darugram->objectName().isEmpty())
             Darugram->setObjectName(QString::fromUtf8("Darugram"));
-        Darugram->resize(784, 469);
+        Darugram->resize(784, 484);
         centralwidget = new QWidget(Darugram);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -67,7 +67,7 @@ public:
         Darugram->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Darugram);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 784, 26));
+        menubar->setGeometry(QRect(0, 0, 784, 22));
         Darugram->setMenuBar(menubar);
         statusbar = new QStatusBar(Darugram);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
