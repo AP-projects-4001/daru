@@ -17,6 +17,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     message.cpp \
+    profile.cpp \
     pv.cpp \
     register.cpp \
     user.cpp
@@ -29,6 +30,7 @@ HEADERS += \
     forget_pass.h \
     mainwindow.h \
     message.h \
+    profile.h \
     pv.h \
     register.h \
     user.h
@@ -38,6 +40,7 @@ FORMS += \
     darugram.ui \
     forget_pass.ui \
     mainwindow.ui \
+    profile.ui \
     pv.ui \
     register.ui
 

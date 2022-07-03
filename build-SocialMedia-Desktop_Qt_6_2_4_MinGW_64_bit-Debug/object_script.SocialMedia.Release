@@ -6,6 +6,7 @@ release/forget_pass.o
 release/main.o
 release/mainwindow.o
 release/message.o
+release/profile.o
 release/pv.o
 release/register.o
 release/user.o
@@ -14,5 +15,6 @@ release/moc_channel.o
 release/moc_darugram.o
 release/moc_forget_pass.o
 release/moc_mainwindow.o
+release/moc_profile.o
 release/moc_pv.o
 release/moc_register.o
