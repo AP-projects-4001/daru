@@ -9,6 +9,7 @@ debug/message.o
 debug/pv.o
 debug/register.o
 debug/user.o
+debug/qrc_Recources.o
 debug/moc_channel.o
 debug/moc_darugram.o
 debug/moc_forget_pass.o
