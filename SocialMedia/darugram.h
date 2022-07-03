@@ -12,6 +12,9 @@
 #include<QMessageBox>
 #include"forget_pass.h"
 #include <QMainWindow>
+#include <QPushButton>
+#include <QListWidget>
+#include <QDebug>
 
 namespace Ui {
 class Darugram;
@@ -30,6 +33,8 @@ private slots:
     void on_Search_btn_clicked();
 
     void on_Start_chat_btn_clicked();
+
+    void on_Chat_btn_clicked();
 
 private:
     Ui::Darugram *ui;

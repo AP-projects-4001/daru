@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>151</width>
-      <height>31</height>
+      <y>10</y>
+      <width>171</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -30,8 +30,8 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>30</y>
+      <x>190</x>
+      <y>20</y>
       <width>381</width>
       <height>21</height>
      </rect>
@@ -40,8 +40,8 @@
    <widget class="QPushButton" name="Search_btn">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>30</y>
+      <x>580</x>
+      <y>20</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -89,6 +89,16 @@
      <string>See Profile</string>
     </property>
    </widget>
+   <widget class="QListWidget" name="chatList">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>101</y>
+      <width>761</width>
+      <height>311</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -96,7 +106,7 @@
      <x>0</x>
      <y>0</y>
      <width>784</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

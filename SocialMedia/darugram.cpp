@@ -29,6 +29,26 @@ Darugram::Darugram(QWidget *parent, User *Current_User) :
     ui->Name_Lable->hide();
     ui->profile_btn->hide();
     ui->Start_chat_btn->hide();
+
+    //adding every chat to the main page
+    QJsonObject allUsers;
+    QJsonObject current;
+    QFile F_R_Users("All_User.json");
+    if(F_R_Users.open(QIODevice::ReadOnly)){
+        QByteArray a = F_R_Users.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        allUsers = b.object();
+        F_R_Users.close();
+    }
+    current=allUsers[Current_User->getID()].toObject();
+    for (int i = 0; i < current["Chats"].toArray().size(); i++){
+        QPushButton *btn = new QPushButton(current["Chats"].toArray()[i].toString());
+        btn->setMinimumHeight(50);
+        connect(btn, SIGNAL(clicked()), this, SLOT(on_Chat_btn_clicked()));
+        QListWidgetItem *item = new QListWidgetItem(ui->chatList);
+        ui->chatList->addItem(item);
+        ui->chatList->setItemWidget(item, btn);
+    }
 }
 
 
@@ -130,5 +150,10 @@ void Darugram::on_Start_chat_btn_clicked()
         }
     }
     delete Cantact;
+}
+
+void Darugram::on_Chat_btn_clicked()
+{
+    qDebug() << "success" ;
 }
 
