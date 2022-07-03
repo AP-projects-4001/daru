@@ -44,7 +44,7 @@ Darugram::Darugram(QWidget *parent, User *Current_User) :
     for (int i = 0; i < current["Chats"].toArray().size(); i++){
         QPushButton *btn = new QPushButton(current["Chats"].toArray()[i].toString());
         //btn->setMinimumHeight(50);
-        connect(btn, SIGNAL(clicked()), this, SLOT(on_Chat_btn_clicked()));
+        connect(btn, SIGNAL(clicked()), this, SLOT(on_Chat_btn_clicked(btn->text())));
         QListWidgetItem *item = new QListWidgetItem(ui->chatList);
         ui->chatList->addItem(item);
         ui->chatList->setItemWidget(item, btn);
@@ -152,8 +152,61 @@ void Darugram::on_Start_chat_btn_clicked()
     delete Cantact;
 }
 
-void Darugram::on_Chat_btn_clicked()
+void Darugram::on_Chat_btn_clicked(QString b)
 {
-    qDebug() << "success" ;
+    QVector<QString> Messages;
+    QJsonObject Test_User;
+    QJsonObject All_User;
+    QJsonObject All_Messages;
+    User* Cantact=new User();
+    QFile F_R_Users("All_User.json");
+    if(F_R_Users.open(QIODevice::ReadOnly))
+    {
+        QByteArray a = F_R_Users.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        All_User = b.object();
+        F_R_Users.close();
+    }
+    QFile F_R_Messages("All_Message.json");
+    if(F_R_Messages.open(QIODevice::ReadOnly))
+    {
+        QByteArray a = F_R_Messages.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        All_Messages = b.object();
+        F_R_Messages.close();
+    }
+    QJsonObject Chat_page_messages=All_Messages[b].toObject();
+    QJsonArray Messeag = All_Messages["Messages"].toArray();
+    for(int i = 0; i<Messeag.size() ; i++)
+    {
+        Messages[i]=Messeag[i].toString();
+    }
+    QVector<QString> ID;
+    ID=b.split("-");
+    if(Current_User->getID()==ID[0])
+    {
+        Test_User=All_User[ID[1]].toObject();
+        Cantact->setUserName(Test_User["Username"].toString());
+        Cantact->setBirthDate(Test_User["Birthday"].toString());
+        Cantact->setEmail(Test_User["Email"].toString());
+        Cantact->setID(Test_User["ID"].toString());
+        Cantact->setPhoneNumber(Test_User["Phone"].toString());
+    }
+    else
+    {
+        Test_User=All_User[ID[0]].toObject();
+        Cantact->setUserName(Test_User["Username"].toString());
+        Cantact->setBirthDate(Test_User["Birthday"].toString());
+        Cantact->setEmail(Test_User["Email"].toString());
+        Cantact->setID(Test_User["ID"].toString());
+        Cantact->setPhoneNumber(Test_User["Phone"].toString());
+    }
+    QVector<User> Chat_User;
+    Chat_User[0]=*Current_User;
+    Chat_User[1]=*Cantact;
+    delete Cantact;
+    Pv *new_chat = new Pv(Messages,Chat_User,b,this);
+    new_chat->show();
+
 }
 

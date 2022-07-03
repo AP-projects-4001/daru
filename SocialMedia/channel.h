@@ -14,7 +14,7 @@ class Channel : public QMainWindow, public Chat
 //channel class to impliment chennels in social media
 public:
     explicit Channel(QWidget *parent = nullptr);
-    explicit Channel(QString channelName, QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent = nullptr);
+    explicit Channel(QString channelName, QVector<QString> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent = nullptr);
 
     QVector<User> getAdmins() const;
     User getCreator() const;

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -31,6 +32,7 @@ public:
     QLabel *Name_Lable;
     QPushButton *Start_chat_btn;
     QPushButton *profile_btn;
+    QListWidget *chatList;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -38,18 +40,18 @@ public:
     {
         if (Darugram->objectName().isEmpty())
             Darugram->setObjectName(QString::fromUtf8("Darugram"));
-        Darugram->resize(784, 469);
+        Darugram->resize(784, 484);
         centralwidget = new QWidget(Darugram);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(10, 20, 151, 31));
+        label->setGeometry(QRect(10, 10, 171, 41));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(160, 30, 381, 21));
+        lineEdit->setGeometry(QRect(190, 20, 381, 21));
         Search_btn = new QPushButton(centralwidget);
         Search_btn->setObjectName(QString::fromUtf8("Search_btn"));
-        Search_btn->setGeometry(QRect(570, 30, 121, 21));
+        Search_btn->setGeometry(QRect(580, 20, 121, 21));
         Name_Lable = new QLabel(centralwidget);
         Name_Lable->setObjectName(QString::fromUtf8("Name_Lable"));
         Name_Lable->setGeometry(QRect(20, 70, 181, 20));
@@ -59,6 +61,9 @@ public:
         profile_btn = new QPushButton(centralwidget);
         profile_btn->setObjectName(QString::fromUtf8("profile_btn"));
         profile_btn->setGeometry(QRect(430, 70, 171, 24));
+        chatList = new QListWidget(centralwidget);
+        chatList->setObjectName(QString::fromUtf8("chatList"));
+        chatList->setGeometry(QRect(15, 101, 761, 311));
         Darugram->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Darugram);
         menubar->setObjectName(QString::fromUtf8("menubar"));

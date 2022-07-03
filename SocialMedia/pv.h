@@ -14,7 +14,8 @@ class Pv : public QMainWindow , public Chat
 
 public:
     explicit Pv(QWidget *parent = nullptr);
-    explicit Pv(QVector<Message> messages, QVector<User> members, QWidget *parent = nullptr);
+    explicit Pv(QVector<QString> messages, QVector<User> members, QWidget *parent = nullptr);
+    explicit Pv(QVector<QString> messages,QVector<User> members,QString Chat_page_name,QWidget *parent = nullptr);
     ~Pv();
 
 private slots:

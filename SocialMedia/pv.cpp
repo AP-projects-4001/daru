@@ -17,7 +17,7 @@ Pv::Pv(QWidget *parent) :
     ui->setupUi(this);
 }
 
-Pv::Pv(QVector<Message> messages, QVector<User> members, QWidget *parent) :
+Pv::Pv(QVector<QString> messages, QVector<User> members, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Pv)
 {
@@ -25,6 +25,19 @@ Pv::Pv(QVector<Message> messages, QVector<User> members, QWidget *parent) :
     this->setMembers(members);
     ui->setupUi(this);
     ui->label->setText(members[1].getUserName());
+}
+
+Pv::Pv(QVector<QString> messages,QVector<User> members, QString Chat_page_name, QWidget *parent)
+{
+    this->setMessages(messages);
+    this->set_Chat_page_name(Chat_page_name);
+    this->setMembers(members);
+    ui->setupUi(this);
+    ui->label->setText(members[1].getUserName());
+    for(int i =0;i<this->getMessages().size();i++)
+    {
+        ui->listWidget->addItem(this->getMessages()[i]);
+    }
 }
 
 Pv::~Pv()

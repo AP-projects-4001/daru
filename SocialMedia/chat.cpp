@@ -5,13 +5,13 @@ Chat::Chat()
     ;
 }
 
-Chat::Chat(QVector<Message> messages, QVector<User> members)
+Chat::Chat(QVector<QString> messages, QVector<User> members)
 {
     setMessages(messages);
     setMembers(members);
 }
 
-QVector<Message> Chat::getMessages() const
+QVector<QString> Chat::getMessages() const
 {
     return messages;
 }
@@ -19,6 +19,11 @@ QVector<Message> Chat::getMessages() const
 QVector<User> Chat::getMembers() const
 {
     return members;
+}
+
+QString Chat::get_Chat_page_name() const
+{
+    return Chat_page_name;
 }
 
 /*int Chat::getNewMessageCount() const
@@ -31,9 +36,14 @@ void Chat::setMembers(QVector<User> members)
     this->members = members;
 }
 
-void Chat::setMessages(QVector<Message> messages)
+void Chat::setMessages(QVector<QString> messages)
 {
     this->messages = messages;
+}
+
+void Chat::set_Chat_page_name(QString chat_page)
+{
+    this->Chat_page_name = chat_page;
 }
 
 /*void Chat::addNewMessageCount()
@@ -41,7 +51,4 @@ void Chat::setMessages(QVector<Message> messages)
     newMessageCount++;
 }*/
 
-void Chat::addMessage(Message msg)
-{
-    this->messages.push_front(msg);
-}
+

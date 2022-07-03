@@ -7,22 +7,25 @@
 // a class for showing the chat screen
 class Chat
 {
-    QVector<Message> messages;
+    QVector<QString> messages;
     QVector<User> members;
+    QString Chat_page_name;
     //int newMessageCount;
 public:
     Chat();
-    Chat(QVector<Message> messages, QVector<User> members);
+    Chat(QVector<QString> messages, QVector<User> members);
 
-    QVector<Message> getMessages() const;
+    QVector<QString> getMessages() const;
     QVector<User> getMembers() const;
+    QString get_Chat_page_name() const;
     //int getNewMessageCount() const;
 
     void setMembers(QVector<User> members);
-    void setMessages(QVector<Message> messages);
+    void setMessages(QVector<QString> messages);
+    void set_Chat_page_name(QString chat_page);
     //void addNewMessageCount();
 
-    void addMessage(Message msg);
+    //void addMessage(Message msg);
 };
 
 #endif // CHAT_H

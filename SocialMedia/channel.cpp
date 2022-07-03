@@ -8,7 +8,7 @@ Channel::Channel(QWidget *parent) :
     ui->setupUi(this);
 }
 
-Channel::Channel(QString channelName, QVector<Message> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent) :
+Channel::Channel(QString channelName, QVector<QString> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Channel)
 {

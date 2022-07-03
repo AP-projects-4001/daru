@@ -34,7 +34,7 @@ private slots:
 
     void on_Start_chat_btn_clicked();
 
-    void on_Chat_btn_clicked();
+    void on_Chat_btn_clicked(QString b);
 
 private:
     Ui::Darugram *ui;
