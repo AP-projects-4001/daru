@@ -43,7 +43,7 @@ Darugram::Darugram(QWidget *parent, User *Current_User) :
     current=allUsers[Current_User->getID()].toObject();
     for (int i = 0; i < current["Chats"].toArray().size(); i++){
         QPushButton *btn = new QPushButton(current["Chats"].toArray()[i].toString());
-        btn->setMinimumHeight(50);
+        //btn->setMinimumHeight(50);
         connect(btn, SIGNAL(clicked()), this, SLOT(on_Chat_btn_clicked()));
         QListWidgetItem *item = new QListWidgetItem(ui->chatList);
         ui->chatList->addItem(item);

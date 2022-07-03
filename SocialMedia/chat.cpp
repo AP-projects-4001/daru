@@ -21,6 +21,11 @@ QVector<User> Chat::getMembers() const
     return members;
 }
 
+/*int Chat::getNewMessageCount() const
+{
+    return newMessageCount;
+}*/
+
 void Chat::setMembers(QVector<User> members)
 {
     this->members = members;
@@ -30,6 +35,11 @@ void Chat::setMessages(QVector<Message> messages)
 {
     this->messages = messages;
 }
+
+/*void Chat::addNewMessageCount()
+{
+    newMessageCount++;
+}*/
 
 void Chat::addMessage(Message msg)
 {

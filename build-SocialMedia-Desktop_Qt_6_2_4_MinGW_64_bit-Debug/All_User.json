@@ -1,11 +1,27 @@
 {
+    "Alidia": {
+        "Birthday": "birthday",
+        "Chats": [
+            "Alidia-Nimazzmm"
+        ],
+        "Contacts": [
+            "Nimazzmm"
+        ],
+        "Email": "Alidia138",
+        "ID": "Alidia",
+        "Password": "Alidia138",
+        "Phone": "9134486410",
+        "Username": "Alidia"
+    },
     "Nimazzmm": {
         "Birthday": "birthday",
         "Chats": [
-            "Nimazzmm-diap_2003"
+            "Nimazzmm-diap_2003",
+            "Alidia-Nimazzmm"
         ],
         "Contacts": [
-            "diap_2003"
+            "diap_2003",
+            "Alidia"
         ],
         "Email": "Nima5977",
         "ID": "Nimazzmm",
