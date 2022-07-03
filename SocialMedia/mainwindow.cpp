@@ -12,6 +12,7 @@
 #include<QMessageBox>
 #include"forget_pass.h"
 #include"darugram.h"
+#include <QPixmap>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,6 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QPixmap pix(":/image/images/darugram.jpg");
+    int width = ui->picLabel->width();
+    int height = ui->picLabel->height();
+    ui->picLabel->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
