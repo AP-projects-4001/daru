@@ -4,6 +4,10 @@
 #include "user.h"
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QFile>
 
 namespace Ui {
 class Profile;
