@@ -34,6 +34,8 @@ private slots:
 
     void on_profileChangeButton_clicked();
 
+    void on_removeProfileButton_clicked();
+
 private:
     Ui::Profile *ui;
 

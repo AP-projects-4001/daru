@@ -14,6 +14,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -29,22 +30,27 @@ public:
     QLabel *label;
     QPushButton *profileChangeButton;
     QPushButton *removeProfileButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLineEdit *usernameChangetxt;
     QPushButton *usernameChangebtn;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *IDChangetxt;
     QPushButton *IDChangebtn;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *phoneChangetxt;
     QPushButton *phoneChangebtn;
-    QWidget *widget3;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_4;
     QLineEdit *passChangetxt;
     QPushButton *passChangebtn;
+    QLabel *profilePicLabel;
+    QLabel *label_2;
+    QListWidget *listOfPermission;
+    QLabel *labelPandN;
+    QLabel *alakiLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -57,78 +63,93 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(40, 30, 151, 161));
+        label->setGeometry(QRect(20, 10, 201, 231));
         profileChangeButton = new QPushButton(centralwidget);
         profileChangeButton->setObjectName(QString::fromUtf8("profileChangeButton"));
-        profileChangeButton->setGeometry(QRect(210, 70, 201, 31));
+        profileChangeButton->setGeometry(QRect(260, 70, 201, 31));
         removeProfileButton = new QPushButton(centralwidget);
         removeProfileButton->setObjectName(QString::fromUtf8("removeProfileButton"));
-        removeProfileButton->setGeometry(QRect(210, 120, 201, 31));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 230, 521, 31));
-        horizontalLayout = new QHBoxLayout(widget);
+        removeProfileButton->setGeometry(QRect(260, 120, 201, 31));
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(260, 170, 521, 31));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        usernameChangetxt = new QLineEdit(widget);
+        usernameChangetxt = new QLineEdit(layoutWidget);
         usernameChangetxt->setObjectName(QString::fromUtf8("usernameChangetxt"));
 
         horizontalLayout->addWidget(usernameChangetxt);
 
-        usernameChangebtn = new QPushButton(widget);
+        usernameChangebtn = new QPushButton(layoutWidget);
         usernameChangebtn->setObjectName(QString::fromUtf8("usernameChangebtn"));
 
         horizontalLayout->addWidget(usernameChangebtn);
 
-        widget1 = new QWidget(centralwidget);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(20, 270, 491, 31));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(260, 210, 491, 31));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        IDChangetxt = new QLineEdit(widget1);
+        IDChangetxt = new QLineEdit(layoutWidget1);
         IDChangetxt->setObjectName(QString::fromUtf8("IDChangetxt"));
 
         horizontalLayout_2->addWidget(IDChangetxt);
 
-        IDChangebtn = new QPushButton(widget1);
+        IDChangebtn = new QPushButton(layoutWidget1);
         IDChangebtn->setObjectName(QString::fromUtf8("IDChangebtn"));
 
         horizontalLayout_2->addWidget(IDChangebtn);
 
-        widget2 = new QWidget(centralwidget);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(20, 310, 511, 31));
-        horizontalLayout_3 = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(centralwidget);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(260, 250, 511, 31));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        phoneChangetxt = new QLineEdit(widget2);
+        phoneChangetxt = new QLineEdit(layoutWidget2);
         phoneChangetxt->setObjectName(QString::fromUtf8("phoneChangetxt"));
 
         horizontalLayout_3->addWidget(phoneChangetxt);
 
-        phoneChangebtn = new QPushButton(widget2);
+        phoneChangebtn = new QPushButton(layoutWidget2);
         phoneChangebtn->setObjectName(QString::fromUtf8("phoneChangebtn"));
 
         horizontalLayout_3->addWidget(phoneChangebtn);
 
-        widget3 = new QWidget(centralwidget);
-        widget3->setObjectName(QString::fromUtf8("widget3"));
-        widget3->setGeometry(QRect(20, 350, 521, 31));
-        horizontalLayout_4 = new QHBoxLayout(widget3);
+        layoutWidget3 = new QWidget(centralwidget);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(260, 290, 521, 31));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        passChangetxt = new QLineEdit(widget3);
+        passChangetxt = new QLineEdit(layoutWidget3);
         passChangetxt->setObjectName(QString::fromUtf8("passChangetxt"));
         passChangetxt->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_4->addWidget(passChangetxt);
 
-        passChangebtn = new QPushButton(widget3);
+        passChangebtn = new QPushButton(layoutWidget3);
         passChangebtn->setObjectName(QString::fromUtf8("passChangebtn"));
 
         horizontalLayout_4->addWidget(passChangebtn);
 
+        profilePicLabel = new QLabel(centralwidget);
+        profilePicLabel->setObjectName(QString::fromUtf8("profilePicLabel"));
+        profilePicLabel->setGeometry(QRect(20, 10, 201, 231));
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(230, 410, 121, 31));
+        listOfPermission = new QListWidget(centralwidget);
+        listOfPermission->setObjectName(QString::fromUtf8("listOfPermission"));
+        listOfPermission->setGeometry(QRect(360, 330, 421, 211));
+        labelPandN = new QLabel(centralwidget);
+        labelPandN->setObjectName(QString::fromUtf8("labelPandN"));
+        labelPandN->setGeometry(QRect(30, 350, 171, 191));
+        alakiLabel = new QLabel(centralwidget);
+        alakiLabel->setObjectName(QString::fromUtf8("alakiLabel"));
+        alakiLabel->setGeometry(QRect(30, 290, 171, 31));
         Profile->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Profile);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -155,6 +176,10 @@ public:
         IDChangebtn->setText(QCoreApplication::translate("Profile", "Change ID", nullptr));
         phoneChangebtn->setText(QCoreApplication::translate("Profile", "Change Number", nullptr));
         passChangebtn->setText(QCoreApplication::translate("Profile", "Change Password", nullptr));
+        profilePicLabel->setText(QString());
+        label_2->setText(QCoreApplication::translate("Profile", "Profile Access:", nullptr));
+        labelPandN->setText(QString());
+        alakiLabel->setText(QCoreApplication::translate("Profile", "Powered by P&N", nullptr));
     } // retranslateUi
 
 };

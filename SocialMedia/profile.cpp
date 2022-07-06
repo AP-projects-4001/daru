@@ -6,6 +6,10 @@ Profile::Profile(QWidget *parent) :
     ui(new Ui::Profile)
 {
     ui->setupUi(this);
+    QPixmap pix(":/image/images/download.jpg");
+    int width = ui->labelPandN->width();
+    int height = ui->labelPandN->height();
+    ui->labelPandN->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
 }
 
 Profile::~Profile()
@@ -170,4 +174,10 @@ void Profile::on_profileChangeButton_clicked()
 
 
 
+
+
+void Profile::on_removeProfileButton_clicked()
+{
+    ui->profilePicLabel->clear();
+}
 
