@@ -8,6 +8,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QFile>
+#include <QFileDialog>
 
 namespace Ui {
 class Profile;
@@ -30,6 +31,8 @@ private slots:
     void on_phoneChangebtn_clicked();
 
     void on_passChangebtn_clicked();
+
+    void on_profileChangeButton_clicked();
 
 private:
     Ui::Profile *ui;

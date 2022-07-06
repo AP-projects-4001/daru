@@ -150,3 +150,24 @@ void Profile::on_passChangebtn_clicked()
     }
 }
 
+
+void Profile::on_profileChangeButton_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Choose"), "", tr("Images (*.png *.jpg *.jpeg)"));
+    if (QString::compare(fileName, QString()) != 0){
+        QImage image;
+        bool valid = image.load(fileName);
+
+        if (valid){
+            image = image.scaledToWidth(ui->profilePicLabel->width(), Qt::SmoothTransformation);
+            ui->profilePicLabel->setPixmap(QPixmap::fromImage(image));
+        }
+        else{
+            QMessageBox::information(this, "Failure", "Something went wrong, please try again later", QMessageBox::Close);
+        }
+    }
+}
+
+
+
+
