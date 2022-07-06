@@ -117,11 +117,17 @@ void Darugram::on_Start_chat_btn_clicked()
         Cantact->getContacts().push_front(*Current_User);
         Current_User->getContacts().push_front(*Cantact);
         QJsonArray c = Current["Contacts"].toArray();
-        QJsonArray d =Test_User["Contacts"].toArray();
+        QJsonArray d = Test_User["Contacts"].toArray();
         c.append(Cantact->getID());
         d.append(Current_User->getID());
         Current["Contacts"] = c;
         Test_User["Contacts"] = d;
+        QJsonArray e = Current["AorD"].toArray();
+        QJsonArray f = Test_User["AorD"].toArray();
+        e.append(1);
+        f.append(1);
+        Current["AorD"] = e;
+        Test_User["AorD"] = f;
         QString Chat_Name = Current_User->getID()+"-"+Cantact->getID();
         c = Current["Chats"].toArray();
         c.append(Chat_Name);
