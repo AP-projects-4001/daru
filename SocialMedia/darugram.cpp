@@ -42,7 +42,7 @@ Darugram::Darugram(QWidget *parent, User *Current_User) :
         allUsers = b.object();
         F_R_Users.close();
     }
-    current=allUsers[Current_User->getID()].toObject();
+    current = allUsers[Current_User->getID()].toObject();
     for (int i = 0; i < current["Chats"].toArray().size(); i++){
         QPushButton *btn = new QPushButton(current["Chats"].toArray()[i].toString());
         //btn->setMinimumHeight(50);
@@ -248,5 +248,37 @@ void Darugram::on_CreatGroup_clicked()
 {
     Creat_channele *x = new Creat_channele(Current_User,this);
     x->show();
+}
+
+
+void Darugram::on_profile_btn_clicked()
+{
+    QJsonObject Test_User;
+    QJsonObject All_User;
+    User* profileUser = new User();
+    QFile F_R_Users("All_User.json");
+    if(F_R_Users.open(QIODevice::ReadOnly))
+    {
+        QByteArray a = F_R_Users.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        All_User = b.object();
+        F_R_Users.close();
+        QList Users_Keys = All_User.keys();
+        for(int i = 0;i<Users_Keys.size();i++)
+        {
+            Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
+            if(Test_User["Username"].toString()==ui->Name_Lable->text())
+            {
+                break;
+            }
+        }
+        for (int i = 0; i < Test_User["Contacts"].toArray().size(); i++){
+            if (Current_User->getID() == Test_User["Contacts"].toArray()[i].toString()){
+                if (Test_User["AorD"].toArray()[i].toInteger() == 1){
+
+                }
+            }
+        }
+    }
 }
 

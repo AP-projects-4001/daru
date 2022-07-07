@@ -10,6 +10,24 @@ Profile::Profile(QWidget *parent) :
     int width = ui->labelPandN->width();
     int height = ui->labelPandN->height();
     ui->labelPandN->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
+    QJsonObject allUsers;
+    QJsonObject current;
+    QFile F_R_Users("All_User.json");
+    if(F_R_Users.open(QIODevice::ReadOnly)){
+        QByteArray a = F_R_Users.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        allUsers = b.object();
+        F_R_Users.close();
+    }
+    current = allUsers[currentUser->getID()].toObject();
+    for (int i = 0; i < current["Contacts"].toArray().size(); i++){
+        QCheckBox *check = new QCheckBox(current["Contacts"].toArray()[i].toString(), this);
+        //btn->setMinimumHeight(50);
+        connect(check, SIGNAL(stateChanged(int)), this, SLOT(on_check_clicked(check->isChecked(), check->text())));
+        QListWidgetItem *item = new QListWidgetItem(ui->listOfPermission);
+        ui->listOfPermission->addItem(item);
+        ui->listOfPermission->setItemWidget(item, check);
+    }
 }
 
 Profile::~Profile()
@@ -20,7 +38,7 @@ Profile::~Profile()
 void Profile::on_usernameChangebtn_clicked()
 {
     try{
-        currentUser.setUserName(ui->usernameChangetxt->text());
+        currentUser->setUserName(ui->usernameChangetxt->text());
         QJsonObject All_User;
         QFile F_R_Users("All_User.json");
         if(F_R_Users.open(QIODevice::ReadOnly))
@@ -35,7 +53,7 @@ void Profile::on_usernameChangebtn_clicked()
         for(int i = 0;i<Users_Keys.size();i++)
         {
             Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
-            if(Test_User["ID"] == currentUser.getID())
+            if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Username"] = ui->usernameChangetxt->text();
             }
@@ -53,7 +71,7 @@ void Profile::on_usernameChangebtn_clicked()
 void Profile::on_IDChangebtn_clicked()
 {
     try{
-        currentUser.setID(ui->IDChangetxt->text());
+        currentUser->setID(ui->IDChangetxt->text());
         QJsonObject All_User;
         QFile F_R_Users("All_User.json");
         if(F_R_Users.open(QIODevice::ReadOnly))
@@ -68,10 +86,10 @@ void Profile::on_IDChangebtn_clicked()
         for(int i = 0;i<Users_Keys.size();i++)
         {
             Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
-            if(Test_User["ID"] == currentUser.getID())
+            if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["ID"] = ui->IDChangetxt->text();
-                All_User.remove(currentUser.getID());
+                All_User.remove(currentUser->getID());
                 All_User[ui->IDChangetxt->text()] = Test_User;
             }
 
@@ -90,7 +108,7 @@ void Profile::on_IDChangebtn_clicked()
 void Profile::on_phoneChangebtn_clicked()
 {
     try{
-        currentUser.setPhoneNumber(ui->phoneChangetxt->text());
+        currentUser->setPhoneNumber(ui->phoneChangetxt->text());
         QJsonObject All_User;
         QFile F_R_Users("All_User.json");
         if(F_R_Users.open(QIODevice::ReadOnly))
@@ -105,7 +123,7 @@ void Profile::on_phoneChangebtn_clicked()
         for(int i = 0;i<Users_Keys.size();i++)
         {
             Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
-            if(Test_User["ID"] == currentUser.getID())
+            if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Phone"] = ui->phoneChangetxt->text();
             }
@@ -124,7 +142,7 @@ void Profile::on_phoneChangebtn_clicked()
 void Profile::on_passChangebtn_clicked()
 {
     try{
-        currentUser.setPassword(ui->passChangetxt->text());
+        currentUser->setPassword(ui->passChangetxt->text());
         QJsonObject All_User;
         QFile F_R_Users("All_User.json");
         if(F_R_Users.open(QIODevice::ReadOnly))
@@ -139,7 +157,7 @@ void Profile::on_passChangebtn_clicked()
         for(int i = 0;i<Users_Keys.size();i++)
         {
             Test_User = All_User[Users_Keys.at(i).toLocal8Bit().constData()].toObject();
-            if(Test_User["ID"] == currentUser.getID())
+            if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Password"] = ui->passChangetxt->text();
             }
@@ -173,11 +191,32 @@ void Profile::on_profileChangeButton_clicked()
 }
 
 
-
-
-
 void Profile::on_removeProfileButton_clicked()
 {
     ui->profilePicLabel->clear();
+}
+
+void Profile::on_check_clicked(bool x, QString id)
+{
+    QJsonObject allUsers;
+    QJsonObject current;
+    QFile F_R_Users("All_User.json");
+    if(F_R_Users.open(QIODevice::ReadOnly)){
+        QByteArray a = F_R_Users.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        allUsers = b.object();
+        F_R_Users.close();
+    }
+    current = allUsers[currentUser->getID()].toObject();
+    for (int i = 0; i < current["Contacts"].toArray().size(); i++){
+        if (current["Contacts"].toArray()[i].toString() == id){
+            if (x){
+                current["AorD"].toArray()[i] = 1;
+            }
+            else{
+                current["AorD"].toArray()[i] = 0;
+            }
+        }
+    }
 }
 

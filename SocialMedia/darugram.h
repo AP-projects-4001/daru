@@ -35,13 +35,12 @@ private slots:
 
     void on_Start_chat_btn_clicked();
 
-<<<<<<< HEAD
     void on_Chat_btn_clicked();
 
     void on_CreatGroup_clicked();
 
-=======
->>>>>>> 684f6a979e37557544d1655ca0436f3f8e7f2d92
+    void on_profile_btn_clicked();
+
 private:
     Ui::Darugram *ui;
     User *Current_User;

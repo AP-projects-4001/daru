@@ -9,6 +9,7 @@
 #include <QJsonObject>
 #include <QFile>
 #include <QFileDialog>
+#include <QCheckBox>
 
 namespace Ui {
 class Profile;
@@ -20,7 +21,7 @@ class Profile : public QMainWindow
 
 public:
     explicit Profile(QWidget *parent = nullptr);
-    explicit Profile(User currentUser, QWidget *parent = nullptr);
+    explicit Profile(User *currentUser = new User(), QWidget *parent = nullptr);
     ~Profile();
 
 private slots:
@@ -36,10 +37,12 @@ private slots:
 
     void on_removeProfileButton_clicked();
 
+    void on_check_clicked(bool x, QString id);
+
 private:
     Ui::Profile *ui;
 
-    User currentUser;
+    User *currentUser;
 };
 
 #endif // PROFILE_H
