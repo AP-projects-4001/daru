@@ -20,6 +20,7 @@ SOURCES += \
     mainwindow.cpp \
     message.cpp \
     profile.cpp \
+    profileelse.cpp \
     pv.cpp \
     register.cpp \
     user.cpp
@@ -35,6 +36,7 @@ HEADERS += \
     mainwindow.h \
     message.h \
     profile.h \
+    profileelse.h \
     pv.h \
     register.h \
     user.h
@@ -47,6 +49,7 @@ FORMS += \
     forget_pass.ui \
     mainwindow.ui \
     profile.ui \
+    profileelse.ui \
     pv.ui \
     register.ui
 

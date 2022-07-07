@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QCheckBox>
+#include <QDir>
 
 namespace Ui {
 class Profile;
@@ -35,7 +36,7 @@ private slots:
 
     void on_profileChangeButton_clicked();
 
-    void on_removeProfileButton_clicked();
+    //void on_removeProfileButton_clicked();
 
     void on_check_clicked(bool x, QString id);
 

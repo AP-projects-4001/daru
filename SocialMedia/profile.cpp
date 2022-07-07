@@ -6,10 +6,21 @@ Profile::Profile(QWidget *parent) :
     ui(new Ui::Profile)
 {
     ui->setupUi(this);
+}
+
+Profile::Profile(User *currentUser, QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Profile)
+{
+    ui->setupUi(this);
     QPixmap pix(":/image/images/download.jpg");
     int width = ui->labelPandN->width();
     int height = ui->labelPandN->height();
     ui->labelPandN->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
+    QPixmap pix2(":/image/profiles/" + currentUser->getID() + ".jpg");
+    width = ui->profilePicLabel->width();
+    height = ui->profilePicLabel->height();
+    ui->profilePicLabel->setPixmap(pix2.scaled(width, height, Qt::KeepAspectRatio));
     QJsonObject allUsers;
     QJsonObject current;
     QFile F_R_Users("All_User.json");
@@ -177,12 +188,15 @@ void Profile::on_profileChangeButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Choose"), "", tr("Images (*.png *.jpg *.jpeg)"));
     if (QString::compare(fileName, QString()) != 0){
-        QImage image;
+        QPixmap image;
         bool valid = image.load(fileName);
 
         if (valid){
+            QDir dir;
+            dir.mkdir(":/image/profiles");
+            image.save(QString(":/image/profiles/" + currentUser->getID() + ".jpg"));
             image = image.scaledToWidth(ui->profilePicLabel->width(), Qt::SmoothTransformation);
-            ui->profilePicLabel->setPixmap(QPixmap::fromImage(image));
+            ui->profilePicLabel->setPixmap(image);
         }
         else{
             QMessageBox::information(this, "Failure", "Something went wrong, please try again later", QMessageBox::Close);
@@ -191,10 +205,10 @@ void Profile::on_profileChangeButton_clicked()
 }
 
 
-void Profile::on_removeProfileButton_clicked()
+/*void Profile::on_removeProfileButton_clicked()
 {
     ui->profilePicLabel->clear();
-}
+}*/
 
 void Profile::on_check_clicked(bool x, QString id)
 {
@@ -219,4 +233,3 @@ void Profile::on_check_clicked(bool x, QString id)
         }
     }
 }
-

@@ -15,7 +15,7 @@
 #include <QPushButton>
 #include <QListWidget>
 #include <QDebug>
-
+#include "profileelse.h"
 namespace Ui {
 class Darugram;
 }

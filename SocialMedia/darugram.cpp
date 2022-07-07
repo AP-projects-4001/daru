@@ -275,7 +275,16 @@ void Darugram::on_profile_btn_clicked()
         for (int i = 0; i < Test_User["Contacts"].toArray().size(); i++){
             if (Current_User->getID() == Test_User["Contacts"].toArray()[i].toString()){
                 if (Test_User["AorD"].toArray()[i].toInteger() == 1){
-
+                    profileUser->setUserName(Test_User["Username"].toString());
+                    profileUser->setBirthDate(Test_User["Birthday"].toString());
+                    profileUser->setEmail(Test_User["Email"].toString());
+                    profileUser->setID(Test_User["ID"].toString());
+                    profileUser->setPhoneNumber(Test_User["Phone"].toString());
+                    profileElse* pe = new profileElse(this, profileUser);
+                    pe->show();
+                }
+                else{
+                    QMessageBox::information(this, "Failure", "You're not allowed to see this user's profile!", QMessageBox::Close);
                 }
             }
         }
