@@ -291,3 +291,10 @@ void Darugram::on_profile_btn_clicked()
     }
 }
 
+
+void Darugram::on_Profile_clicked()
+{
+    Profile* prof = new Profile(Current_User, this);
+    prof->show();
+}
+

@@ -13,7 +13,7 @@ Profile::Profile(User *currentUser, QWidget *parent) :
     ui(new Ui::Profile)
 {
     ui->setupUi(this);
-    QPixmap pix(":/image/images/download.jpg");
+    QPixmap pix(":/image/images/download.png");
     int width = ui->labelPandN->width();
     int height = ui->labelPandN->height();
     ui->labelPandN->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
@@ -33,6 +33,9 @@ Profile::Profile(User *currentUser, QWidget *parent) :
     current = allUsers[currentUser->getID()].toObject();
     for (int i = 0; i < current["Contacts"].toArray().size(); i++){
         QCheckBox *check = new QCheckBox(current["Contacts"].toArray()[i].toString(), this);
+        if (current["AorD"].toArray()[i].toInteger()){
+            check->setChecked(1);
+        }
         //btn->setMinimumHeight(50);
         connect(check, SIGNAL(stateChanged(int)), this, SLOT(on_check_clicked(check->isChecked(), check->text())));
         QListWidgetItem *item = new QListWidgetItem(ui->listOfPermission);

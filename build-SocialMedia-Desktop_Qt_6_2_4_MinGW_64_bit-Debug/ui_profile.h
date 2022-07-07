@@ -143,7 +143,7 @@ public:
         label_2->setGeometry(QRect(230, 410, 121, 31));
         listOfPermission = new QListWidget(centralwidget);
         listOfPermission->setObjectName(QString::fromUtf8("listOfPermission"));
-        listOfPermission->setGeometry(QRect(360, 330, 271, 211));
+        listOfPermission->setGeometry(QRect(360, 340, 271, 201));
         labelPandN = new QLabel(centralwidget);
         labelPandN->setObjectName(QString::fromUtf8("labelPandN"));
         labelPandN->setGeometry(QRect(30, 350, 171, 191));

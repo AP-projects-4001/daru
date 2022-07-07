@@ -16,6 +16,8 @@
 #include <QListWidget>
 #include <QDebug>
 #include "profileelse.h"
+#include "profile.h"
+
 namespace Ui {
 class Darugram;
 }
@@ -40,6 +42,8 @@ private slots:
     void on_CreatGroup_clicked();
 
     void on_profile_btn_clicked();
+
+    void on_Profile_clicked();
 
 private:
     Ui::Darugram *ui;
