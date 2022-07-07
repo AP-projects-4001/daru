@@ -33,6 +33,8 @@ public:
     QPushButton *Start_chat_btn;
     QPushButton *profile_btn;
     QListWidget *chatList;
+    QPushButton *CreatGroup;
+    QPushButton *Profile;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,7 +42,7 @@ public:
     {
         if (Darugram->objectName().isEmpty())
             Darugram->setObjectName(QString::fromUtf8("Darugram"));
-        Darugram->resize(784, 484);
+        Darugram->resize(784, 540);
         centralwidget = new QWidget(Darugram);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -63,7 +65,13 @@ public:
         profile_btn->setGeometry(QRect(430, 70, 171, 24));
         chatList = new QListWidget(centralwidget);
         chatList->setObjectName(QString::fromUtf8("chatList"));
-        chatList->setGeometry(QRect(15, 101, 761, 311));
+        chatList->setGeometry(QRect(10, 170, 761, 311));
+        CreatGroup = new QPushButton(centralwidget);
+        CreatGroup->setObjectName(QString::fromUtf8("CreatGroup"));
+        CreatGroup->setGeometry(QRect(110, 120, 201, 41));
+        Profile = new QPushButton(centralwidget);
+        Profile->setObjectName(QString::fromUtf8("Profile"));
+        Profile->setGeometry(QRect(420, 120, 201, 41));
         Darugram->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Darugram);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -86,6 +94,8 @@ public:
         Name_Lable->setText(QCoreApplication::translate("Darugram", "Name:", nullptr));
         Start_chat_btn->setText(QCoreApplication::translate("Darugram", "Start Chat", nullptr));
         profile_btn->setText(QCoreApplication::translate("Darugram", "See Profile", nullptr));
+        CreatGroup->setText(QCoreApplication::translate("Darugram", "Create Channel or group", nullptr));
+        Profile->setText(QCoreApplication::translate("Darugram", "Profile", nullptr));
     } // retranslateUi
 
 };

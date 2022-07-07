@@ -1,0 +1,38 @@
+{
+    "hal": {
+        "Admins": [
+            "Nima"
+        ],
+        "Creator": "Nima",
+        "Members": [
+            "Nima",
+            "Pooria"
+        ],
+        "Name": "hal",
+        "State": 1
+    },
+    "nimpo": {
+        "Admins": [
+            "Nima"
+        ],
+        "Creator": "Nima",
+        "Members": [
+            "Nima",
+            "Pooria"
+        ],
+        "Name": "nimpo",
+        "State": 1
+    },
+    "sexy": {
+        "Admins": [
+            "Nima"
+        ],
+        "Creator": "Nima",
+        "Members": [
+            "Nima",
+            "Pooria"
+        ],
+        "Name": "sexy",
+        "State": 0
+    }
+}

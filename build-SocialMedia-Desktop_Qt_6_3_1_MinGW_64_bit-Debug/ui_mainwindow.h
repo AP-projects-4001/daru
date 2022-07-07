@@ -37,6 +37,7 @@ public:
     QPushButton *Forgot_Button;
     QPushButton *Login_Button;
     QPushButton *Register_Button;
+    QLabel *picLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -49,7 +50,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(70, 70, 121, 91));
+        verticalLayoutWidget->setGeometry(QRect(250, 70, 121, 91));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -70,7 +71,7 @@ public:
 
         verticalLayoutWidget_2 = new QWidget(centralwidget);
         verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(210, 70, 541, 91));
+        verticalLayoutWidget_2->setGeometry(QRect(400, 70, 351, 91));
         verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -81,6 +82,7 @@ public:
 
         Line_Pass = new QLineEdit(verticalLayoutWidget_2);
         Line_Pass->setObjectName(QString::fromUtf8("Line_Pass"));
+        Line_Pass->setEchoMode(QLineEdit::Password);
 
         verticalLayout_2->addWidget(Line_Pass);
 
@@ -93,10 +95,13 @@ public:
         Register_Button = new QPushButton(centralwidget);
         Register_Button->setObjectName(QString::fromUtf8("Register_Button"));
         Register_Button->setGeometry(QRect(450, 230, 131, 51));
+        picLabel = new QLabel(centralwidget);
+        picLabel->setObjectName(QString::fromUtf8("picLabel"));
+        picLabel->setGeometry(QRect(40, 40, 171, 161));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -115,6 +120,7 @@ public:
         Forgot_Button->setText(QCoreApplication::translate("MainWindow", "Forget Password", nullptr));
         Login_Button->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         Register_Button->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
+        picLabel->setText(QString());
     } // retranslateUi
 
 };

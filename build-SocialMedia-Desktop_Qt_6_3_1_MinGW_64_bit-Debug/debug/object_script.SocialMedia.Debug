@@ -1,5 +1,6 @@
 debug/channel.o
 debug/chat.o
+debug/creat_channele.o
 debug/darugram.o
 debug/date.o
 debug/forget_pass.o
@@ -9,7 +10,9 @@ debug/message.o
 debug/pv.o
 debug/register.o
 debug/user.o
+debug/qrc_Recources.o
 debug/moc_channel.o
+debug/moc_creat_channele.o
 debug/moc_darugram.o
 debug/moc_forget_pass.o
 debug/moc_mainwindow.o

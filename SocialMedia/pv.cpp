@@ -24,16 +24,18 @@ Pv::Pv(QVector<QString> messages, QVector<User> members, QWidget *parent) :
     this->setMessages(messages);
     this->setMembers(members);
     ui->setupUi(this);
-    ui->label->setText(members[1].getUserName());
+    ui->label->setText(members[0].getUserName());
 }
 
-Pv::Pv(QVector<QString> messages,QVector<User> members, QString Chat_page_name, QWidget *parent)
+Pv::Pv(QVector<QString> messages,QVector<User> members, QString Chat_page_name, QWidget *parent):
+    QMainWindow(parent),
+    ui(new Ui::Pv)
 {
     this->setMessages(messages);
     this->set_Chat_page_name(Chat_page_name);
     this->setMembers(members);
     ui->setupUi(this);
-    ui->label->setText(members[1].getUserName());
+    ui->label->setText(members[0].getUserName());
     for(int i =0;i<this->getMessages().size();i++)
     {
         ui->listWidget->addItem(this->getMessages()[i]);
@@ -48,7 +50,8 @@ Pv::~Pv()
 void Pv::on_Send_btn_clicked()
 {
     Message new_message;
-    new_message.setMsg(ui->lineEdit->text());
+    QString Message_New=getMembers()[1].getUserName()+" : "+ui->lineEdit->text();
+    new_message.setMsg(Message_New);
     new_message.setSender(getMembers()[0].getID());
     new_message.setReciever(getMembers()[1].getID());
     ui->listWidget->addItem(new_message.getMsg());
@@ -94,6 +97,7 @@ void Pv::on_Send_btn_clicked()
         QJsonArray Messages;
         QJsonArray Recivers;
         QJsonArray Senders;
+        All_Message.remove(a);
         Messages=j["Messages"].toArray();
         Recivers = j["Recivers"].toArray();
         Senders = j["Senders"].toArray();
@@ -103,7 +107,7 @@ void Pv::on_Send_btn_clicked()
         j["Messages"]=Messages;
         j["Recivers"]=Recivers;
         j["Senders"]=Senders;
-        All_Message[a]=j;
+        All_Message[b]=j;
         QJsonDocument All_Message_file(All_Message);
 
         QFile F_W_Users("All_Message.json");

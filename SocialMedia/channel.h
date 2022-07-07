@@ -3,6 +3,13 @@
 
 #include "chat.h"
 #include <QMainWindow>
+#include"user.h"
+#include<iostream>
+#include<QJsonArray>
+#include<QJsonDocument>
+#include<QJsonObject>
+#include<QFile>
+#include<QMessageBox>
 
 namespace Ui {
 class Channel;
@@ -14,7 +21,7 @@ class Channel : public QMainWindow, public Chat
 //channel class to impliment chennels in social media
 public:
     explicit Channel(QWidget *parent = nullptr);
-    explicit Channel(QString channelName, QVector<QString> messages, QVector<User> members, User creator, QVector<User> admins, QWidget *parent = nullptr);
+    explicit Channel(QString Chat_page_name,User* Current_User,QWidget *parent = nullptr);
 
     QVector<User> getAdmins() const;
     User getCreator() const;
@@ -26,14 +33,18 @@ public:
     void addMember(User member);
     // checking if someone is an admin
     bool checkAdmin(QString checkUser);
-
+    void Updating_page(QString Chat_page);
     ~Channel();
+
+private slots:
+    void on_Send_btn_clicked();
 
 private:
     User creator;
     QVector<User> admins;
+    User* Current_User;
     Ui::Channel *ui;
-    QString channelName;
+
 };
 
 #endif // CHANNEL_H
