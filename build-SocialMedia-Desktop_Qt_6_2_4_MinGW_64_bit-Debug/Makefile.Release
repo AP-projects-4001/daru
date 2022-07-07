@@ -174,7 +174,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Recources.cpp
 release/qrc_Recources.cpp: ../SocialMedia/Recources.qrc \
 		../../../../QT/6.2.4/mingw_64/bin/rcc.exe \
-		../SocialMedia/images/darugram.jpg
+		../SocialMedia/images/darugram.jpg \
+		../SocialMedia/images/download.png
 	D:\QT\6.2.4\mingw_64\bin\rcc.exe -name Recources ..\SocialMedia\Recources.qrc -o release\qrc_Recources.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -825,6 +826,14 @@ release/moc_darugram.cpp: ../SocialMedia/darugram.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QDebug \
 		../SocialMedia/profileelse.h \
 		../../../../QT/6.2.4/mingw_64/include/QtGui/QPixmap \
+		../SocialMedia/profile.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qdir.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/QDir \
 		release/moc_predefs.h \
 		../../../../QT/6.2.4/mingw_64/bin/moc.exe
 	D:\QT\6.2.4\mingw_64\bin\moc.exe $(DEFINES) --include D:/Project/daru/daru/build-SocialMedia-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/QT/6.2.4/mingw_64/mkspecs/win32-g++ -ID:/Project/daru/daru/SocialMedia -ID:/QT/6.2.4/mingw_64/include -ID:/QT/6.2.4/mingw_64/include/QtWidgets -ID:/QT/6.2.4/mingw_64/include/QtGui -ID:/QT/6.2.4/mingw_64/include/QtCore -I. -ID:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/QT/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/QT/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\SocialMedia\darugram.h -o release\moc_darugram.cpp
@@ -1873,29 +1882,7 @@ release/add_admin.o: ../SocialMedia/add_admin.cpp ../SocialMedia/add_admin.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QSizeF \
 		../../../../QT/6.2.4/mingw_64/include/QtGui/QTransform \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_add_admin.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h
+		ui_add_admin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\add_admin.o ..\SocialMedia\add_admin.cpp
 
 release/channel.o: ../SocialMedia/channel.cpp ../SocialMedia/channel.h \
@@ -2055,61 +2042,7 @@ release/channel.o: ../SocialMedia/channel.cpp ../SocialMedia/channel.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMessageBox \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
-		ui_channel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QListWidget \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qvalidator.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qaction.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QStatusBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget
+		ui_channel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\channel.o ..\SocialMedia\channel.cpp
 
 release/chat.o: ../SocialMedia/chat.cpp ../SocialMedia/chat.h \
@@ -2330,59 +2263,9 @@ release/creat_channele.o: ../SocialMedia/creat_channele.cpp ../SocialMedia/creat
 		../../../../QT/6.2.4/mingw_64/include/QtGui/qicon.h \
 		../SocialMedia/forget_pass.h \
 		ui_creat_channele.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QListWidget \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qvalidator.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QCheckBox \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../SocialMedia/channel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\creat_channele.o ..\SocialMedia\creat_channele.cpp
 
@@ -2567,45 +2450,15 @@ release/darugram.o: ../SocialMedia/darugram.cpp ../SocialMedia/darugram.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QDebug \
 		../SocialMedia/profileelse.h \
 		../../../../QT/6.2.4/mingw_64/include/QtGui/QPixmap \
+		../SocialMedia/profile.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qdir.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/QDir \
 		ui_darugram.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qaction.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QStatusBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget \
 		../SocialMedia/pv.h \
 		../SocialMedia/chat.h \
 		../SocialMedia/message.h \
@@ -2745,43 +2598,6 @@ release/forget_pass.o: ../SocialMedia/forget_pass.cpp ../SocialMedia/forget_pass
 		../../../../QT/6.2.4/mingw_64/include/QtGui/QTransform \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_forget_pass.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qicon.h \
 		../SocialMedia/register.h \
 		../SocialMedia/user.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QVector \
@@ -2794,6 +2610,7 @@ release/forget_pass.o: ../SocialMedia/forget_pass.cpp ../SocialMedia/forget_pass
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborcommon.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/quuid.h \
@@ -3102,54 +2919,6 @@ release/mainwindow.o: ../SocialMedia/mainwindow.cpp ../SocialMedia/mainwindow.h 
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QString \
 		../SocialMedia/date.h \
 		ui_mainwindow.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qaction.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QStatusBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget \
 		../SocialMedia/register.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QDialog \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qdialog.h \
@@ -3159,6 +2928,7 @@ release/mainwindow.o: ../SocialMedia/mainwindow.cpp ../SocialMedia/mainwindow.h 
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborcommon.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/quuid.h \
@@ -3173,11 +2943,15 @@ release/mainwindow.o: ../SocialMedia/mainwindow.cpp ../SocialMedia/mainwindow.h 
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmessagebox.h \
 		../SocialMedia/forget_pass.h \
 		../SocialMedia/darugram.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QListWidget \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -3191,7 +2965,15 @@ release/mainwindow.o: ../SocialMedia/mainwindow.cpp ../SocialMedia/mainwindow.h 
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QDebug \
 		../SocialMedia/profileelse.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/QPixmap
+		../../../../QT/6.2.4/mingw_64/include/QtGui/QPixmap \
+		../SocialMedia/profile.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QFileDialog \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qfiledialog.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qdir.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qfileinfo.h \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QCheckBox \
+		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/QDir
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\SocialMedia\mainwindow.cpp
 
 release/message.o: ../SocialMedia/message.cpp ../SocialMedia/message.h \
@@ -3401,69 +3183,7 @@ release/profile.o: ../SocialMedia/profile.cpp ../SocialMedia/profile.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qcheckbox.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QDir \
-		ui_profile.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QHBoxLayout \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QListWidget \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qvalidator.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qaction.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QStatusBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget
+		ui_profile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\profile.o ..\SocialMedia\profile.cpp
 
 release/profileelse.o: ../SocialMedia/profileelse.cpp ../SocialMedia/profileelse.h \
@@ -3744,73 +3464,15 @@ release/pv.o: ../SocialMedia/pv.cpp ../SocialMedia/pv.h \
 		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../../../QT/6.2.4/mingw_64/include/QtGui/qicon.h \
 		ui_pv.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QListWidget \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistwidget.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlistview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemview.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qitemselectionmodel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qvalidator.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstyle.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QMenuBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenubar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qmenu.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qaction.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QStatusBar \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qstatusbar.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QJsonArray \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qjsonarray.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qjsonvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborcommon.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/quuid.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QJsonDocument \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qjsondocument.h \
@@ -3958,55 +3620,13 @@ release/register.o: ../SocialMedia/register.cpp ../SocialMedia/register.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QString \
 		../SocialMedia/date.h \
 		ui_register.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/QVariant \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QApplication \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qeventloop.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qmutex.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qresultstore.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qthread.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qrunnable.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qexception.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qpromise.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLabel \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qframe.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpicture.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextformat.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qpen.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qtextoption.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QPushButton \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../QT/6.2.4/mingw_64/include/QtGui/qicon.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QVBoxLayout \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qboxlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qlayoutitem.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/qgridlayout.h \
-		../../../../QT/6.2.4/mingw_64/include/QtWidgets/QWidget \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/QJsonArray \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qjsonarray.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qjsonvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborvalue.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qdatetime.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../QT/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qcborcommon.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/qregularexpression.h \
 		../../../../QT/6.2.4/mingw_64/include/QtCore/quuid.h \

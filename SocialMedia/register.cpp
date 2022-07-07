@@ -30,7 +30,7 @@ void Register::on_Cancel_Button_clicked()
 void Register::on_Register_Button_clicked()
 {
     try{
-        User *Reg_user = new User(ui->User_Line->text(),ui->Pass_Line->text(),ui->Phone_Line->text(),ui->Pass_Line->text(),ui->ID_Line->text(),ui->Birthday_Line->text());
+        User *Reg_user = new User(ui->User_Line->text(),ui->Pass_Line->text(),ui->Phone_Line->text(),ui->Emai_Line->text(),ui->ID_Line->text(),ui->Birthday_Line->text());
         QJsonObject All_User;
         QFile F_R_Users("All_User.json");
         int state=1;

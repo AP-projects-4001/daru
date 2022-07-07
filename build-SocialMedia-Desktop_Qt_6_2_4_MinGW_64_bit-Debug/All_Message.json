@@ -1,16 +1,22 @@
 {
-    "lionima-diap_2003": {
+    "nima-diap_2003": {
         "Messages": [
-            "nimazzmm : dfadfadsf",
-            "nimazzmm : safsdf",
-            "nimazzmm : fgdsfasas"
+            "nimazzmm : sdfgsgfgasfsd",
+            "nimazzmm : sdfgsgfgasfsdafdgadg",
+            "nimazzmm : adfasdfasd",
+            "nimazzmm : asdfsdfh",
+            "nimazzmm : asdfsdfh"
         ],
         "Recivers": [
-            "lionima",
-            "lionima",
-            "lionima"
+            "nima",
+            "nima",
+            "nima",
+            "nima",
+            "nima"
         ],
         "Senders": [
+            "diap_2003",
+            "diap_2003",
             "diap_2003",
             "diap_2003",
             "diap_2003"
