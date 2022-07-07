@@ -24,7 +24,7 @@ Channel::Channel(QString Chat_page_name, User* Current_User,QWidget *parent) :
     this->Current_User=Current_User;
     QJsonObject All_Channel;
     QJsonObject This_Channel;
-    Updating_page(Chat_page_name);
+
     QFile F_R_Channel("All_Channel.json");
     if(F_R_Channel.open(QIODevice::ReadOnly))
     {
@@ -72,6 +72,7 @@ Channel::Channel(QString Chat_page_name, User* Current_User,QWidget *parent) :
             ui->Send_btn->hide();
         }
     }
+    Updating_page(Chat_page_name);
 }
 
 QVector<User> Channel::getAdmins() const
@@ -142,6 +143,7 @@ void Channel::Updating_page(QString Chat_page)
     {
         ui->listWidget->addItem(messages[i].toString());
     }
+
 }
 
 Channel::~Channel()
