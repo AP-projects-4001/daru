@@ -70,7 +70,16 @@ void Profile::on_usernameChangebtn_clicked()
             if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Username"] = ui->usernameChangetxt->text();
+                break;
             }
+        }
+        All_User[currentUser->getID()] = Test_User;
+        QJsonDocument All_User_File(All_User);
+        QFile F_W_Users("All_User.json");
+        if(F_W_Users.open(QIODevice::WriteOnly))
+        {
+            F_W_Users.write(All_User_File.toJson());
+            F_W_Users.close();
         }
     }
     catch(out_of_range &y)
@@ -105,8 +114,16 @@ void Profile::on_IDChangebtn_clicked()
                 Test_User["ID"] = ui->IDChangetxt->text();
                 All_User.remove(currentUser->getID());
                 All_User[ui->IDChangetxt->text()] = Test_User;
+                break;
             }
 
+        }
+        QJsonDocument All_User_File(All_User);
+        QFile F_W_Users("All_User.json");
+        if(F_W_Users.open(QIODevice::WriteOnly))
+        {
+            F_W_Users.write(All_User_File.toJson());
+            F_W_Users.close();
         }
     }
 
@@ -140,8 +157,17 @@ void Profile::on_phoneChangebtn_clicked()
             if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Phone"] = ui->phoneChangetxt->text();
+                break;
             }
 
+        }
+        All_User[currentUser->getID()] = Test_User;
+        QJsonDocument All_User_File(All_User);
+        QFile F_W_Users("All_User.json");
+        if(F_W_Users.open(QIODevice::WriteOnly))
+        {
+            F_W_Users.write(All_User_File.toJson());
+            F_W_Users.close();
         }
     }
     catch(out_of_range &y)
@@ -174,8 +200,17 @@ void Profile::on_passChangebtn_clicked()
             if(Test_User["ID"] == currentUser->getID())
             {
                 Test_User["Password"] = ui->passChangetxt->text();
+                break;
             }
 
+        }
+        All_User[currentUser->getID()] = Test_User;
+        QJsonDocument All_User_File(All_User);
+        QFile F_W_Users("All_User.json");
+        if(F_W_Users.open(QIODevice::WriteOnly))
+        {
+            F_W_Users.write(All_User_File.toJson());
+            F_W_Users.close();
         }
     }
     catch(out_of_range &y)
