@@ -7,6 +7,8 @@
 #include<QJsonObject>
 #include<QFile>
 #include<QMessageBox>
+#include"deletemember.h"
+#include"add_admin.h"
 Channel::Channel(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Channel)
@@ -182,3 +184,17 @@ void Channel::on_Send_btn_clicked()
     }
 
 }
+
+void Channel::on_Add_admin_btn_clicked()
+{
+    Add_Admin* new_admin = new Add_Admin(this->getChannelName(),this);
+    new_admin->show();
+}
+
+
+void Channel::on_Delete_member_btn_clicked()
+{
+    DeleteMember* deletm = new DeleteMember(this->getChannelName(),this);
+    deletm->show();
+}
+

@@ -1,0 +1,58 @@
+{
+    "Akbar": {
+        "AorD": [
+            1
+        ],
+        "Birthday": "9876512",
+        "Chats": [
+            "LioNima-Akbar"
+        ],
+        "Contacts": [
+            "LioNima"
+        ],
+        "Email": "Akbar@gmail.com",
+        "ID": "Akbar",
+        "Password": "Akbar1234",
+        "Phone": "9909879871",
+        "Username": "Akbar"
+    },
+    "LioNima": {
+        "AorD": [
+            1,
+            1
+        ],
+        "Birthday": "009988",
+        "Chats": [
+            "LioNima-Akbar",
+            "LioNima-POrria",
+            "homies"
+        ],
+        "Contacts": [
+            "Akbar",
+            "POrria"
+        ],
+        "Email": "nima.1381.zamani@gmail.com",
+        "ID": "LioNima",
+        "Password": "Nima5977",
+        "Phone": "9056678081",
+        "Username": "Nima"
+    },
+    "POrria": {
+        "AorD": [
+            1
+        ],
+        "Birthday": "080881",
+        "Chats": [
+            "LioNima-POrria",
+            "homies"
+        ],
+        "Contacts": [
+            "LioNima"
+        ],
+        "Email": "Pooria@gmail.com",
+        "ID": "POrria",
+        "Password": "Nima5977",
+        "Phone": "9162975815",
+        "Username": "Pooria"
+    }
+}

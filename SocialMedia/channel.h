@@ -39,6 +39,10 @@ public:
 private slots:
     void on_Send_btn_clicked();
 
+    void on_Add_admin_btn_clicked();
+
+    void on_Delete_member_btn_clicked();
+
 private:
     User creator;
     QVector<User> admins;

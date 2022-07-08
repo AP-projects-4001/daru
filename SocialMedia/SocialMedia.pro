@@ -15,6 +15,7 @@ SOURCES += \
     creat_channele.cpp \
     darugram.cpp \
     date.cpp \
+    deletemember.cpp \
     forget_pass.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     creat_channele.h \
     darugram.h \
     date.h \
+    deletemember.h \
     forget_pass.h \
     mainwindow.h \
     message.h \
@@ -46,6 +48,7 @@ FORMS += \
     channel.ui \
     creat_channele.ui \
     darugram.ui \
+    deletemember.ui \
     forget_pass.ui \
     mainwindow.ui \
     profile.ui \
