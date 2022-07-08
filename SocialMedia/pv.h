@@ -21,6 +21,8 @@ public:
 private slots:
     void on_Send_btn_clicked();
 
+    void on_refresh_clicked();
+
 private:
     Ui::Pv *ui;
 };

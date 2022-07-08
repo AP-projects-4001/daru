@@ -1,4 +1,5 @@
 debug/add_admin.o
+debug/add_member.o
 debug/channel.o
 debug/chat.o
 debug/creat_channele.o
@@ -16,6 +17,7 @@ debug/register.o
 debug/user.o
 debug/qrc_Recources.o
 debug/moc_add_admin.o
+debug/moc_add_member.o
 debug/moc_channel.o
 debug/moc_creat_channele.o
 debug/moc_darugram.o

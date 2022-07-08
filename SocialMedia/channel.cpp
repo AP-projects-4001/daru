@@ -9,6 +9,7 @@
 #include<QMessageBox>
 #include"deletemember.h"
 #include"add_admin.h"
+#include"add_member.h"
 Channel::Channel(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Channel)
@@ -52,6 +53,7 @@ Channel::Channel(QString Chat_page_name, User* Current_User,QWidget *parent) :
         {
             ui->Add_admin_btn->hide();
             ui->Delete_member_btn->hide();
+            ui->Add_Member->hide();
         }
     }
     else
@@ -196,5 +198,19 @@ void Channel::on_Delete_member_btn_clicked()
 {
     DeleteMember* deletm = new DeleteMember(this->getChannelName(),this);
     deletm->show();
+}
+
+
+void Channel::on_Add_Member_clicked()
+{
+    Add_Member* new_member = new Add_Member(Current_User->getID(),this->getChannelName(),this);
+    new_member->show();
+}
+
+
+void Channel::on_Refresh_clicked()
+{
+    ui->listWidget->clear();
+    this->Updating_page(this->getChannelName());
 }
 

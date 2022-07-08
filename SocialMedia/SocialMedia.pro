@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     add_admin.cpp \
+    add_member.cpp \
     channel.cpp \
     chat.cpp \
     creat_channele.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 
 HEADERS += \
     add_admin.h \
+    add_member.h \
     channel.h \
     chat.h \
     creat_channele.h \
@@ -45,6 +47,7 @@ HEADERS += \
 
 FORMS += \
     add_admin.ui \
+    add_member.ui \
     channel.ui \
     creat_channele.ui \
     darugram.ui \

@@ -32,6 +32,7 @@ public:
     QLineEdit *lineEdit;
     QPushButton *Send_btn;
     QPushButton *Add_Member;
+    QPushButton *Refresh;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,13 +48,13 @@ public:
         listWidget->setGeometry(QRect(0, 70, 791, 451));
         Add_admin_btn = new QPushButton(centralwidget);
         Add_admin_btn->setObjectName(QString::fromUtf8("Add_admin_btn"));
-        Add_admin_btn->setGeometry(QRect(30, 10, 171, 51));
+        Add_admin_btn->setGeometry(QRect(40, 10, 131, 51));
         Delete_member_btn = new QPushButton(centralwidget);
         Delete_member_btn->setObjectName(QString::fromUtf8("Delete_member_btn"));
-        Delete_member_btn->setGeometry(QRect(410, 10, 171, 51));
+        Delete_member_btn->setGeometry(QRect(480, 10, 141, 51));
         See_mem_btn = new QPushButton(centralwidget);
         See_mem_btn->setObjectName(QString::fromUtf8("See_mem_btn"));
-        See_mem_btn->setGeometry(QRect(220, 10, 171, 51));
+        See_mem_btn->setGeometry(QRect(330, 10, 141, 51));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(40, 530, 591, 22));
@@ -62,7 +63,10 @@ public:
         Send_btn->setGeometry(QRect(650, 530, 111, 24));
         Add_Member = new QPushButton(centralwidget);
         Add_Member->setObjectName(QString::fromUtf8("Add_Member"));
-        Add_Member->setGeometry(QRect(600, 10, 171, 51));
+        Add_Member->setGeometry(QRect(630, 10, 141, 51));
+        Refresh = new QPushButton(centralwidget);
+        Refresh->setObjectName(QString::fromUtf8("Refresh"));
+        Refresh->setGeometry(QRect(180, 10, 141, 51));
         Channel->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Channel);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -85,6 +89,7 @@ public:
         See_mem_btn->setText(QCoreApplication::translate("Channel", "See_Members", nullptr));
         Send_btn->setText(QCoreApplication::translate("Channel", "Send", nullptr));
         Add_Member->setText(QCoreApplication::translate("Channel", "Add_Member", nullptr));
+        Refresh->setText(QCoreApplication::translate("Channel", "Refresh", nullptr));
     } // retranslateUi
 
 };

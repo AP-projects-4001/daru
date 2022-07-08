@@ -27,9 +27,9 @@
    <widget class="QPushButton" name="Add_admin_btn">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>10</y>
-      <width>171</width>
+      <width>131</width>
       <height>51</height>
      </rect>
     </property>
@@ -40,9 +40,9 @@
    <widget class="QPushButton" name="Delete_member_btn">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>480</x>
       <y>10</y>
-      <width>171</width>
+      <width>141</width>
       <height>51</height>
      </rect>
     </property>
@@ -53,9 +53,9 @@
    <widget class="QPushButton" name="See_mem_btn">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>330</x>
       <y>10</y>
-      <width>171</width>
+      <width>141</width>
       <height>51</height>
      </rect>
     </property>
@@ -89,14 +89,27 @@
    <widget class="QPushButton" name="Add_Member">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>630</x>
       <y>10</y>
-      <width>171</width>
+      <width>141</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>Add_Member</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Refresh">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>10</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Refresh</string>
     </property>
    </widget>
   </widget>

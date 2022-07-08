@@ -1,4 +1,5 @@
 release/add_admin.o
+release/add_member.o
 release/channel.o
 release/chat.o
 release/creat_channele.o
@@ -16,6 +17,7 @@ release/register.o
 release/user.o
 release/qrc_Recources.o
 release/moc_add_admin.o
+release/moc_add_member.o
 release/moc_channel.o
 release/moc_creat_channele.o
 release/moc_darugram.o

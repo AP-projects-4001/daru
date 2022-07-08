@@ -40,7 +40,7 @@
    <widget class="QPushButton" name="Profile_btn">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>100</x>
       <y>10</y>
       <width>211</width>
       <height>24</height>
@@ -71,6 +71,19 @@
     </property>
     <property name="text">
      <string>Send</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh">
+    <property name="geometry">
+     <rect>
+      <x>414</x>
+      <y>10</y>
+      <width>281</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Refresh</string>
     </property>
    </widget>
   </widget>

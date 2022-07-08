@@ -120,3 +120,26 @@ void Pv::on_Send_btn_clicked()
 
 }
 
+
+void Pv::on_refresh_clicked()
+{
+
+    QJsonObject All_Messages;
+    QFile F_R_Messages("All_Message.json");
+    if(F_R_Messages.open(QIODevice::ReadOnly))
+    {
+        QByteArray a = F_R_Messages.readAll();
+        QJsonDocument b = QJsonDocument::fromJson(a);
+        All_Messages = b.object();
+        F_R_Messages.close();
+    }
+    QJsonObject This_Chat;
+    This_Chat=All_Messages[this->get_Chat_page_name()].toObject();
+    QJsonArray messages = This_Chat["Messages"].toArray();
+    ui->listWidget->clear();
+    for(int i = 0;i<messages.size();i++)
+    {
+        ui->listWidget->addItem(messages[i].toString());
+    }
+}
+
