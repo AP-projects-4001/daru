@@ -1,0 +1,30 @@
+{
+    "LioNima-Akbar": {
+        "Messages": [
+            "Nima : dorrod be agha akbar"
+        ],
+        "Recivers": [
+            "LioNima"
+        ],
+        "Senders": [
+            "Akbar"
+        ]
+    },
+    "LioNima-POrria": {
+        "Messages": [
+            "Nima : koonie"
+        ],
+        "Recivers": [
+            "LioNima"
+        ],
+        "Senders": [
+            "POrria"
+        ]
+    },
+    "homies": {
+        "Messages": [
+        ],
+        "Senders": [
+        ]
+    }
+}

@@ -7,6 +7,8 @@
 #include<QJsonObject>
 #include<QFile>
 #include<QMessageBox>
+#include"deletemember.h"
+#include"add_admin.h"
 Channel::Channel(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Channel)
@@ -24,7 +26,7 @@ Channel::Channel(QString Chat_page_name, User* Current_User,QWidget *parent) :
     this->Current_User=Current_User;
     QJsonObject All_Channel;
     QJsonObject This_Channel;
-    Updating_page(Chat_page_name);
+
     QFile F_R_Channel("All_Channel.json");
     if(F_R_Channel.open(QIODevice::ReadOnly))
     {
@@ -72,6 +74,7 @@ Channel::Channel(QString Chat_page_name, User* Current_User,QWidget *parent) :
             ui->Send_btn->hide();
         }
     }
+    Updating_page(Chat_page_name);
 }
 
 QVector<User> Channel::getAdmins() const
@@ -142,6 +145,7 @@ void Channel::Updating_page(QString Chat_page)
     {
         ui->listWidget->addItem(messages[i].toString());
     }
+
 }
 
 Channel::~Channel()
@@ -180,3 +184,17 @@ void Channel::on_Send_btn_clicked()
     }
 
 }
+
+void Channel::on_Add_admin_btn_clicked()
+{
+    Add_Admin* new_admin = new Add_Admin(this->getChannelName(),this);
+    new_admin->show();
+}
+
+
+void Channel::on_Delete_member_btn_clicked()
+{
+    DeleteMember* deletm = new DeleteMember(this->getChannelName(),this);
+    deletm->show();
+}
+

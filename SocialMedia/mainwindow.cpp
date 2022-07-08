@@ -42,9 +42,11 @@ void MainWindow::on_Register_Button_clicked()
 void MainWindow::on_Login_Button_clicked()
 {
     QJsonObject Test_User;
-    QJsonObject All_User;
     QJsonObject Cntacts;
     int state = 0;
+    QJsonObject All_User;
+
+
     QFile F_R_Users("All_User.json");
     if(F_R_Users.open(QIODevice::ReadOnly))
     {
